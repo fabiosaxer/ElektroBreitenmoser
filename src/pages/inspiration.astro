@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inspiration" description="Inspiration rund um V-ZUG Küchen- und Waschereigeräte.">
+	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+		<h1 class="text-3xl font-bold text-slate-900">Inspiration</h1>
+		<p class="mt-3 max-w-2xl text-slate-600">
+			Hier entsteht eine Bildergalerie mit Referenzprojekten und Produktinspiration.
+			Platzhalter – Bildmaterial folgt.
+		</p>
+		<div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+			{
+				Array.from({ length: 6 }).map((_, i) => (
+					<div class="flex aspect-square items-center justify-center rounded-lg bg-slate-100 text-sm text-slate-400">
+						Bild {i + 1}
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Layout>
