@@ -73,10 +73,11 @@
 ## 8. Offene Punkte (mit Fabio/Kunde zu klären)
 
 - [ ] Formspree- oder Web3Forms-Account erstellen, Form-Endpoint/Access-Key liefern
-- [ ] Finale Bild-/Logo-Assets in hoher Auflösung beschaffen
-- [ ] Zugang zu Plesk bei Hosttime für Domain `elektrobreitenmoser.ch` (Git-Integration einrichten)
+- [x] Finale Bild-/Logo-Assets in hoher Auflösung beschafft (siehe `pictures/`, kuratierte Auswahl in `src/assets/images` und `public/`)
+- [ ] Zugang zu Plesk bei Hosttime für Domain `elektrobreitenmoser.ch` (Git-Integration einrichten) – übernimmt Fabio selbst
 - [x] UID: CHE-108.098.718
-- [ ] Impressums-Daten (Handelsregisternummer, verantwortliche Person)
+- [x] Handelsregisternummer: CH-320-3014903-8
+- [x] Verantwortliche Person: Daniel Benz
 - [ ] Google-Maps-Embed bzw. Standort-Widget gewünscht?
 - [ ] Mehrsprachigkeit nötig, oder reicht Deutsch? (aktuell: nur Deutsch angenommen)
 - [ ] Datenschutzfreundliche Analytics gewünscht (z. B. Plausible)?
