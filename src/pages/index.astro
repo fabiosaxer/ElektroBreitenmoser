@@ -1,34 +1,50 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import heroStandort from '../assets/images/hero-standort.jpg';
+import vzugWerk from '../assets/images/vzug-werk.jpg';
+import serviceFlotte from '../assets/images/service-flotte.jpg';
 ---
 
 <Layout title="Start" description="Ihr V-ZUG Fachhändler und Servicepartner im Rheintal – persönliche Beratung seit fast 100 Jahren.">
-	<section class="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6">
-		<h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-			Ihr V-ZUG Partner in Marbach
-		</h1>
-		<p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-			Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Küchen- und
-			Waschereigeräte – kompetent, zuverlässig und aus dem Rheintal.
-		</p>
-		<div class="mt-8 flex justify-center gap-4">
-			<a
-				href="tel:0717771276"
-				class="rounded-md bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800"
-			>
-				071 777 12 76 anrufen
-			</a>
-			<a
-				href="/geraeteanfrage"
-				class="rounded-md border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:border-blue-700 hover:text-blue-700"
-			>
-				Geräteanfrage stellen
-			</a>
+	<section class="relative">
+		<Image
+			src={heroStandort}
+			alt="Filiale der Elektro Breitenmoser AG in Marbach"
+			class="h-[420px] w-full object-cover sm:h-[520px]"
+			widths={[640, 1024, 1600]}
+			sizes="100vw"
+		/>
+		<div class="absolute inset-0 bg-vzug/70"></div>
+		<div class="absolute inset-0 flex items-center">
+			<div class="mx-auto w-full max-w-6xl px-4 text-center text-white sm:px-6">
+				<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+					Ihr V-ZUG Partner in Marbach
+				</h1>
+				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+					Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Küchen- und
+					Waschereigeräte – kompetent, zuverlässig und aus dem Rheintal.
+				</p>
+				<div class="mt-8 flex flex-wrap justify-center gap-4">
+					<a
+						href="tel:0717771276"
+						class="rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-dark"
+					>
+						071 777 12 76 anrufen
+					</a>
+					<a
+						href="/geraeteanfrage"
+						class="rounded-md border border-white/70 px-6 py-3 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
+					>
+						Geräteanfrage stellen
+					</a>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<section class="bg-slate-50 py-16">
-		<div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2">
+		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
 			<div>
 				<h2 class="text-2xl font-semibold text-slate-900">Über V-ZUG</h2>
 				<p class="mt-3 text-slate-600">
@@ -37,7 +53,31 @@ import Layout from '../layouts/Layout.astro';
 					Europas mit CO2-neutraler Produktion – nachhaltig hergestellt, direkt aus
 					der Schweiz.
 				</p>
+				<img
+					src="/vzug-partner-badge.png"
+					alt="V-ZUG Regionalpartner"
+					class="mt-6 h-16 w-auto"
+				/>
 			</div>
+			<Image
+				src={vzugWerk}
+				alt="V-ZUG Gebäude"
+				class="rounded-lg object-cover shadow-sm"
+				widths={[400, 800, 1200]}
+				sizes="(min-width: 768px) 50vw, 100vw"
+			/>
+		</div>
+	</section>
+
+	<section class="py-16">
+		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
+			<Image
+				src={serviceFlotte}
+				alt="Service-Flotte der Elektro Breitenmoser AG"
+				class="rounded-lg object-cover shadow-sm md:order-2"
+				widths={[400, 800, 1200]}
+				sizes="(min-width: 768px) 50vw, 100vw"
+			/>
 			<div>
 				<h2 class="text-2xl font-semibold text-slate-900">Unsere Leistungen</h2>
 				<ul class="mt-3 space-y-2 text-slate-600">

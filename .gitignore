@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# raw source photos/logo dump – curated copies live in src/assets/images and public/
+pictures/

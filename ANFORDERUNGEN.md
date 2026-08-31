@@ -75,7 +75,8 @@
 - [ ] Formspree- oder Web3Forms-Account erstellen, Form-Endpoint/Access-Key liefern
 - [ ] Finale Bild-/Logo-Assets in hoher Auflösung beschaffen
 - [ ] Zugang zu Plesk bei Hosttime für Domain `elektrobreitenmoser.ch` (Git-Integration einrichten)
-- [ ] Impressums-Daten (Handelsregisternummer, UID, verantwortliche Person)
+- [x] UID: CHE-108.098.718
+- [ ] Impressums-Daten (Handelsregisternummer, verantwortliche Person)
 - [ ] Google-Maps-Embed bzw. Standort-Widget gewünscht?
 - [ ] Mehrsprachigkeit nötig, oder reicht Deutsch? (aktuell: nur Deutsch angenommen)
 - [ ] Datenschutzfreundliche Analytics gewünscht (z. B. Plausible)?
