@@ -50,8 +50,10 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 			class="h-[420px] w-full object-cover sm:h-[520px]"
 			widths={[640, 1024, 1600]}
 			sizes="100vw"
+			loading="eager"
+			fetchpriority="high"
 		/>
-		<div class="absolute inset-0 bg-gradient-to-t from-vzug/85 via-vzug/50 to-vzug/20"></div>
+		<div class="absolute inset-0 bg-gradient-to-t from-vzug/90 via-vzug/70 to-vzug/50"></div>
 		<div class="absolute inset-0 flex items-center">
 			<div class="mx-auto w-full max-w-6xl px-4 text-center text-white sm:px-6">
 				<h1 class="text-[32px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] lg:text-[56px]">
@@ -198,8 +200,9 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 								src={item.src}
 								alt={item.alt}
 								class="h-full w-full object-cover"
-								widths={[300, 500, 800]}
+								widths={[300, 500, 640]}
 								sizes="(min-width: 768px) 25vw, 50vw"
+								quality={70}
 							/>
 							<p class="absolute inset-x-0 bottom-0 bg-slate-900/60 px-2 py-1.5 text-xs font-medium text-white">
 								{item.caption}
@@ -298,7 +301,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 						href="https://www.vzug.com/ch/de/recipes"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark"
+						class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent-dark hover:text-accent"
 					>
 						Rezepte entdecken
 						<span aria-hidden="true">→</span>
