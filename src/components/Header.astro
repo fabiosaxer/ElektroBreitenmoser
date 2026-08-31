@@ -13,7 +13,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 		<a href="/" class="flex items-center">
 			<img src="/logo.png" alt="Elektro Breitenmoser AG" class="h-8 w-auto sm:h-10" />
 		</a>
-		<nav class="flex items-center gap-6">
+		<nav class="hidden items-center gap-6 sm:flex">
 			{
 				navItems.map((item) => (
 					<a
@@ -29,10 +29,85 @@ const currentPath = new URL(Astro.request.url).pathname;
 			}
 			<a
 				href="tel:0717771276"
-				class="hidden rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark sm:inline-block"
+				class="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
 			>
 				071 777 12 76
 			</a>
 		</nav>
+		<button
+			id="mobile-menu-button"
+			type="button"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+			aria-label="Menü öffnen"
+			class="flex h-9 w-9 items-center justify-center rounded-md text-slate-700 sm:hidden"
+		>
+			<svg
+				id="icon-open"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				class="h-6 w-6"
+			>
+				<line x1="3" y1="6" x2="21" y2="6" />
+				<line x1="3" y1="12" x2="21" y2="12" />
+				<line x1="3" y1="18" x2="21" y2="18" />
+			</svg>
+			<svg
+				id="icon-close"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				class="hidden h-6 w-6"
+			>
+				<line x1="6" y1="6" x2="18" y2="18" />
+				<line x1="6" y1="18" x2="18" y2="6" />
+			</svg>
+		</button>
 	</div>
+	<nav
+		id="mobile-menu"
+		class="hidden flex-col gap-1 border-t border-slate-200 px-4 py-3 sm:hidden"
+	>
+		{
+			navItems.map((item) => (
+				<a
+					href={item.href}
+					class:list={[
+						'rounded-md px-2 py-2 text-sm font-medium',
+						currentPath === item.href ? 'text-brand' : 'text-slate-600',
+					]}
+				>
+					{item.label}
+				</a>
+			))
+		}
+		<a
+			href="tel:0717771276"
+			class="mt-2 rounded-md bg-brand px-4 py-2 text-center text-sm font-semibold text-white"
+		>
+			071 777 12 76
+		</a>
+	</nav>
 </header>
+
+<script>
+	const button = document.getElementById('mobile-menu-button');
+	const menu = document.getElementById('mobile-menu');
+	const iconOpen = document.getElementById('icon-open');
+	const iconClose = document.getElementById('icon-close');
+
+	button?.addEventListener('click', () => {
+		const isOpen = menu?.classList.toggle('hidden') === false;
+		menu?.classList.toggle('flex', isOpen);
+		iconOpen?.classList.toggle('hidden', isOpen);
+		iconClose?.classList.toggle('hidden', !isOpen);
+		button.setAttribute('aria-expanded', String(isOpen));
+	});
+</script>
