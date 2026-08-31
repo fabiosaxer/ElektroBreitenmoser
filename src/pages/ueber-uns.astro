@@ -7,21 +7,28 @@ import kuehlschrankfabrikInnen from '../assets/images/kuehlschrankfabrik-innen.j
 
 // TODO: Platzhalter – mit den echten Meilensteinen der Firmengeschichte ersetzen.
 const milestones = [
-	{ year: '19XX', title: 'Gründung', text: 'TODO: Gründungsjahr und -geschichte des Unternehmens ergänzen.' },
-	{ year: '19XX', title: 'Generationenwechsel', text: 'TODO: Wichtige Etappe in der Firmengeschichte ergänzen.' },
-	{ year: '19XX', title: 'V-ZUG Regionalpartner', text: 'TODO: Seit wann Partnerschaft mit V-ZUG besteht.' },
-	{ year: '20XX', title: 'Standort Fortunastrasse', text: 'TODO: Bezug/Ausbau des heutigen Standorts in Marbach.' },
-	{ year: 'Heute', title: 'Elektro Breitenmoser AG', text: 'Unter der Leitung von Daniel Benz beraten wir Sie persönlich rund um V-ZUG Geräte.' },
+	{ year: '19XX', title: 'Gründung', text: 'TODO: Gründungsjahr und -geschichte des Unternehmens ergänzen.', tone: 'brand' },
+	{ year: '19XX', title: 'Generationenwechsel', text: 'TODO: Wichtige Etappe in der Firmengeschichte ergänzen.', tone: 'brand' },
+	{ year: '19XX', title: 'V-ZUG Regionalpartner', text: 'TODO: Seit wann Partnerschaft mit V-ZUG besteht.', tone: 'vzug' },
+	{ year: '20XX', title: 'Standort Fortunastrasse', text: 'TODO: Bezug/Ausbau des heutigen Standorts in Marbach.', tone: 'brand' },
+	{ year: 'Heute', title: 'Elektro Breitenmoser AG', text: 'Unter der Leitung von Daniel Benz begleiten wir Sie heute persönlich – von der Beratung bis zur Installation.', tone: 'brand' },
 ];
+
+const h2 =
+	'text-[24px] leading-[1.3] font-semibold text-slate-900 sm:text-[28px] md:text-[30px] lg:text-[34px]';
 ---
 
 <Layout title="Über uns" description="Die Geschichte der Elektro Breitenmoser AG – seit fast 100 Jahren V-ZUG Partner im Rheintal.">
 	<section class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-		<h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">Über uns</h1>
+		<p class="text-[13px] font-semibold uppercase tracking-[0.08em] text-vzug">
+			Traditionsreicher Familienbetrieb im Rheintal
+		</p>
+		<h1 class="mt-3 text-[32px] font-bold leading-[1.15] text-slate-900 sm:text-[40px] sm:leading-[1.1] lg:text-[56px]">
+			Über uns
+		</h1>
 		<p class="mx-auto mt-4 max-w-2xl text-slate-600">
-			Seit fast 100 Jahren stehen wir für persönliche Beratung, Schweizer
-			Qualität und Zuverlässigkeit – als V-ZUG Regionalpartner mitten im
-			Rheintal.
+			Persönliche Beratung, ausgeprägte Produktkenntnis und Schweizer Qualität –
+			das ist unser Anspruch als V-ZUG Regionalpartner im Rheintal.
 		</p>
 	</section>
 
@@ -45,7 +52,14 @@ const milestones = [
 									: 'md:col-start-2 md:row-start-1',
 							]}
 						>
-							<span class="text-2xl font-bold text-accent">{m.year}</span>
+							<span
+								class:list={[
+									'text-2xl font-bold',
+									m.tone === 'vzug' ? 'text-vzug' : 'text-brand-dark',
+								]}
+							>
+								{m.year}
+							</span>
 							<h2 class="mt-1 text-lg font-semibold text-slate-900">{m.title}</h2>
 							<p class="mt-2 text-slate-600">{m.text}</p>
 						</div>
@@ -56,30 +70,30 @@ const milestones = [
 	</section>
 
 	<section class="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
-		<div class="grid items-center gap-10 rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8 md:grid-cols-2">
-			<div class="grid grid-cols-2 gap-3">
+		<div class="grid items-center gap-10 rounded-xl border border-slate-200 bg-brand-50 p-6 sm:p-8 md:grid-cols-2">
+			<div class="grid grid-cols-2 gap-3 overflow-hidden rounded-lg border-t-4 border-t-vzug">
 				<Image
 					src={showroomGeschichteVzug}
 					alt="Historische V-ZUG Waschmaschinen im Museum"
-					class="col-span-2 rounded-lg object-cover shadow-sm"
+					class="col-span-2 object-cover"
 					widths={[400, 800, 1200]}
 					sizes="(min-width: 768px) 25vw, 50vw"
 				/>
 				<Image
 					src={kuehlschrankfabrikInnen}
 					alt="Produktion im V-ZUG Werk Sulgen"
-					class="col-span-2 aspect-[3/1] rounded-lg object-cover shadow-sm"
+					class="col-span-2 aspect-[3/1] object-cover"
 					widths={[400, 800, 1200]}
 					sizes="(min-width: 768px) 25vw, 50vw"
 				/>
 			</div>
 			<div>
-				<h2 class="text-2xl font-semibold text-slate-900">V-ZUG seit 1913</h2>
+				<h2 class={h2}>V-ZUG seit 1913</h2>
 				<p class="mt-3 text-slate-600">
-					Von der ersten vollautomatischen Waschmaschine bis zur modernen,
-					CO2-neutralen Produktion im Werk Sulgen: Als Regionalpartner stehen
-					wir für dieselbe Schweizer Tradition aus Präzision und Qualität, die
-					V-ZUG seit über 100 Jahren auszeichnet.
+					Von der ersten vollautomatischen Waschmaschine bis zur CO2-neutralen
+					Produktion im Werk Sulgen: Als Regionalpartner tragen wir dieselbe
+					Schweizer Tradition aus Präzision und Qualität mit, die V-ZUG seit über
+					100 Jahren auszeichnet.
 				</p>
 			</div>
 		</div>
@@ -95,14 +109,14 @@ const milestones = [
 				sizes="(min-width: 768px) 50vw, 100vw"
 			/>
 			<div>
-				<h2 class="text-2xl font-semibold text-slate-900">Bereit für Ihr Projekt?</h2>
+				<h2 class={h2}>Bereit für Ihr Projekt?</h2>
 				<p class="mt-3 text-slate-600">
 					Ob neue Küche oder Waschraum – wir beraten Sie unverbindlich und
 					begleiten Sie von der Auswahl bis zum fertig eingebauten Gerät.
 				</p>
 				<a
 					href="/geraeteanfrage"
-					class="mt-6 inline-block rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
+					class="mt-6 inline-block rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
 				>
 					Geräteanfrage stellen
 				</a>

@@ -9,17 +9,37 @@ import showroomKueche from '../assets/images/showroom-kueche.jpg';
 import showroomKuechengeraete from '../assets/images/showroom-kuechengeraete.jpg';
 import showroomWeinkuehler from '../assets/images/showroom-weinkuehler.jpg';
 import showroomWaeschetuerme from '../assets/images/showroom-waeschetuerme.jpg';
-import servicefahrzeugIdbuzz from '../assets/images/servicefahrzeug-idbuzz.jpg';
-import symbolbildLieferung from '../assets/images/symbolbild-lieferung.jpg';
 import kuehlschrankfabrikBanner from '../assets/images/kuehlschrankfabrik-banner.jpg';
 import rezepteInspiration from '../assets/images/rezepte-inspiration.jpg';
 
 const showroom = [
-	{ src: showroomKueche, alt: 'V-ZUG Kücheninsel mit Kühlschrank und Backöfen im Showroom' },
-	{ src: showroomKuechengeraete, alt: 'V-ZUG Einbaugeräte in offener Küche' },
-	{ src: showroomWeinkuehler, alt: 'V-ZUG Weinkühlschrank, eingebaut' },
-	{ src: showroomWaeschetuerme, alt: 'V-ZUG Waschtürme im Showroom' },
+	{
+		src: showroomKueche,
+		alt: 'V-ZUG Kücheninsel mit Kühlschrank und Backöfen im Showroom',
+		caption: 'Kücheninsel mit V-ZUG Kühl- und Backgeräten',
+	},
+	{
+		src: showroomKuechengeraete,
+		alt: 'V-ZUG Einbaugeräte in offener Küche',
+		caption: 'V-ZUG Einbaugeräte in offener Küche',
+	},
+	{
+		src: showroomWeinkuehler,
+		alt: 'V-ZUG Weinkühlschrank, eingebaut',
+		caption: 'V-ZUG Weinkühlschrank',
+	},
+	{
+		src: showroomWaeschetuerme,
+		alt: 'V-ZUG Waschtürme im Showroom',
+		caption: 'V-ZUG Waschtürme',
+	},
 ];
+
+const h2 =
+	'text-[24px] leading-[1.3] font-semibold text-slate-900 sm:text-[28px] md:text-[30px] lg:text-[34px]';
+const h3 = 'text-[18px] leading-[1.3] font-semibold text-slate-900';
+const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-dark';
+const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-vzug';
 ---
 
 <Layout title="Start" description="Ihr V-ZUG Fachhändler und Servicepartner im Rheintal – persönliche Beratung seit fast 100 Jahren.">
@@ -31,38 +51,112 @@ const showroom = [
 			widths={[640, 1024, 1600]}
 			sizes="100vw"
 		/>
-		<div class="absolute inset-0 bg-vzug/70"></div>
+		<div class="absolute inset-0 bg-gradient-to-t from-vzug/85 via-vzug/50 to-vzug/20"></div>
 		<div class="absolute inset-0 flex items-center">
 			<div class="mx-auto w-full max-w-6xl px-4 text-center text-white sm:px-6">
-				<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-					Ihr V-ZUG Partner in Marbach
+				<h1 class="text-[32px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] lg:text-[56px]">
+					Ihr V-ZUG Fachhändler in Marbach
 				</h1>
 				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
 					Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Küchen- und
-					Waschereigeräte – kompetent, zuverlässig und aus dem Rheintal.
+					Waschereigeräte – von der Auswahl bis zur Installation, aus dem Rheintal.
 				</p>
 				<div class="mt-8 flex flex-wrap justify-center gap-4">
 					<a
-						href="tel:0717771276"
-						class="rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-dark"
-					>
-						071 777 12 76 anrufen
-					</a>
-					<a
 						href="/geraeteanfrage"
-						class="rounded-md border border-white/70 px-6 py-3 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
+						class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark"
 					>
 						Geräteanfrage stellen
+					</a>
+					<a
+						href="tel:0717771276"
+						class="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+					>
+						071 777 12 76 anrufen
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-		<h2 class="text-2xl font-semibold text-slate-900">Wofür dürfen wir Sie beraten?</h2>
+	<section class="bg-brand-50 py-4">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6">
+			<ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-medium text-brand-dark sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-brand-100">
+				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.75"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-5 w-5 flex-shrink-0"
+						aria-hidden="true"
+					>
+						<circle cx="12" cy="12" r="9" />
+						<path d="M12 7v5l3 2" />
+					</svg>
+					<span>Seit Generationen im Rheintal</span>
+				</li>
+				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.75"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-5 w-5 flex-shrink-0"
+						aria-hidden="true"
+					>
+						<circle cx="12" cy="12" r="9" />
+						<path d="M8 12.5l2.5 2.5L16 9.5" />
+					</svg>
+					<span>Beratung bis Installation aus einer Hand</span>
+				</li>
+				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.75"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-5 w-5 flex-shrink-0"
+						aria-hidden="true"
+					>
+						<rect x="2" y="7" width="12" height="9" rx="1" />
+						<path d="M14 10h4l3 3v3h-7z" />
+						<circle cx="7" cy="18" r="1.6" />
+						<circle cx="17" cy="18" r="1.6" />
+					</svg>
+					<span>Lieferung in die ganze Schweiz</span>
+				</li>
+				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.75"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-5 w-5 flex-shrink-0"
+						aria-hidden="true"
+					>
+						<path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z" />
+						<circle cx="12" cy="9.5" r="2.5" />
+					</svg>
+					<span>Persönliche Beratung vor Ort</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
+		<p class={kickerBrand}>Wählen Sie Ihren Gerätebereich</p>
+		<h2 class:list={['mt-2', h2]}>Wofür dürfen wir Sie beraten?</h2>
 		<p class="mt-2 max-w-2xl text-slate-600">
-			Wählen Sie einen Gerätebereich – wir übernehmen Ihre Auswahl direkt in die
+			Wählen Sie Ihren Gerätebereich – wir übernehmen die Auswahl direkt in Ihre
 			Geräteanfrage.
 		</p>
 		{
@@ -75,11 +169,11 @@ const showroom = [
 						{r.items.map((item) => (
 							<a
 								href={`/geraeteanfrage?geraet=${item.slug}`}
-								class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
+								class="group flex flex-col items-center gap-3 rounded-xl border border-brand-100 bg-white p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand-50 hover:shadow-md"
 							>
 								<ApplianceIcon
 									name={item.slug}
-									class="h-10 w-10 text-brand transition group-hover:text-accent"
+									class="h-10 w-10 text-brand transition group-hover:text-brand-dark"
 								/>
 								<span class="text-sm font-medium text-slate-700">{item.label}</span>
 							</a>
@@ -90,91 +184,78 @@ const showroom = [
 		}
 	</section>
 
-	<section class="bg-slate-50 py-16">
+	<section class="bg-brand-50 py-16 lg:py-24">
 		<div class="mx-auto max-w-6xl px-4 sm:px-6">
-			<h2 class="text-2xl font-semibold text-slate-900">Einblick in unser Sortiment</h2>
+			<h2 class={h2}>Einblick in unser Sortiment</h2>
 			<p class="mt-2 max-w-2xl text-slate-600">
 				Eindrücke aus dem V-ZUG Showroom – von der Kücheninsel bis zum Waschturm.
 			</p>
 			<div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
 				{
 					showroom.map((item) => (
-						<Image
-							src={item.src}
-							alt={item.alt}
-							class="aspect-square w-full rounded-lg object-cover"
-							widths={[300, 500, 800]}
-							sizes="(min-width: 768px) 25vw, 50vw"
-						/>
+						<div class="relative aspect-square overflow-hidden rounded-lg">
+							<Image
+								src={item.src}
+								alt={item.alt}
+								class="h-full w-full object-cover"
+								widths={[300, 500, 800]}
+								sizes="(min-width: 768px) 25vw, 50vw"
+							/>
+							<p class="absolute inset-x-0 bottom-0 bg-slate-900/60 px-2 py-1.5 text-xs font-medium text-white">
+								{item.caption}
+							</p>
+						</div>
 					))
 				}
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16">
-		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
-			<Image
-				src={installation}
-				alt="Von der Elektro Breitenmoser AG installierter V-ZUG Waschturm"
-				class="rounded-lg object-cover shadow-sm"
-				widths={[400, 800, 1200]}
-				sizes="(min-width: 768px) 50vw, 100vw"
-			/>
-			<div>
-				<h2 class="text-2xl font-semibold text-slate-900">Persönlich vor Ort</h2>
-				<p class="mt-3 text-slate-600">
-					Als familiär geführter Betrieb im Rheintal begleiten wir Sie von der
-					Beratung im Showroom über die Lieferung bis zur fachgerechten
-					Installation – persönlich und zuverlässig.
-				</p>
-				<a
-					href="/ueber-uns"
-					class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
-				>
-					Mehr über uns erfahren
-					<span aria-hidden="true">→</span>
-				</a>
+	<section class="py-16 lg:py-24">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6">
+			<h2 class={h2}>Beratung, Lieferung und Installation aus einer Hand</h2>
+			<div class="mt-10 grid gap-10 md:grid-cols-[1.1fr_1fr_1fr] md:items-start">
+				<Image
+					src={installation}
+					alt="Von der Elektro Breitenmoser AG installierter V-ZUG Waschturm"
+					class="aspect-[4/3] w-full rounded-lg object-cover shadow-sm"
+					widths={[400, 800, 1200]}
+					sizes="(min-width: 768px) 33vw, 100vw"
+				/>
+				<div>
+					<h3 class={h3}>Persönlich vor Ort</h3>
+					<p class="mt-3 text-slate-600">
+						Als familiär geführter Betrieb im Rheintal begleiten wir Sie persönlich –
+						von der Beratung im Showroom über die Lieferung bis zur fachgerechten
+						Installation bei Ihnen zu Hause.
+					</p>
+					<a
+						href="/ueber-uns"
+						class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
+					>
+						Mehr über uns erfahren
+						<span aria-hidden="true">→</span>
+					</a>
+				</div>
+				<div>
+					<h3 class={h3}>Service &amp; Lieferung</h3>
+					<ul class="mt-3 space-y-2 text-slate-600">
+						<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
+						<li>Lieferung in die ganze Schweiz</li>
+						<li>Geräteservice und Support</li>
+					</ul>
+					<p class="mt-4 text-sm text-slate-500">
+						Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
+						Ersatzteilbedarf wenden Sie sich bitte an V-ZUG direkt: 058 767 67 84.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="bg-slate-50 py-16">
-		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
-			<div class="grid grid-cols-2 gap-4 md:order-2">
-				<Image
-					src={servicefahrzeugIdbuzz}
-					alt="Servicefahrzeug der Elektro Breitenmoser AG"
-					class="col-span-2 rounded-lg object-cover shadow-sm"
-					widths={[400, 800, 1200]}
-					sizes="(min-width: 768px) 50vw, 100vw"
-				/>
-				<Image
-					src={symbolbildLieferung}
-					alt="Versand von V-ZUG Geräten in die ganze Schweiz"
-					class="col-span-2 aspect-[3/1] rounded-lg object-cover shadow-sm"
-					widths={[400, 800, 1200]}
-					sizes="(min-width: 768px) 50vw, 100vw"
-				/>
-			</div>
-			<div>
-				<h2 class="text-2xl font-semibold text-slate-900">Service &amp; Lieferung</h2>
-				<ul class="mt-3 space-y-2 text-slate-600">
-					<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
-					<li>Geräteservice und Support</li>
-					<li>Versand in die ganze Schweiz</li>
-				</ul>
-				<p class="mt-4 text-sm text-slate-500">
-					Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
-					Ersatzteilbedarf wenden Sie sich bitte an V-ZUG direkt: 058 767 67 84.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16">
+	<section class="py-16 lg:py-24">
 		<div class="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2">
-			<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200">
+			<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 border-t-4 border-t-vzug">
 				<Image
 					src={kuehlschrankfabrikBanner}
 					alt="V-ZUG Kühlschrankwerk in Sulgen"
@@ -188,11 +269,14 @@ const showroom = [
 						alt="V-ZUG Regionalpartner"
 						class="h-12 w-auto self-start"
 					/>
-					<h2 class="mt-4 text-lg font-semibold text-slate-900">V-ZUG Regionalpartner</h2>
+					<p class:list={['mt-4', kickerVzug]}>Offizielle V-ZUG Partnerschaft</p>
+					<h2 class:list={['mt-1', h3]}>V-ZUG Regionalpartner</h2>
 					<p class="mt-2 text-sm text-slate-600">
-						V-ZUG steht seit 1913 für Schweizer Qualität. Im Werk Sulgen entsteht
-						seit 2022 CO2-neutral die modernste Kühlgerätefabrik Europas – als
-						Regionalpartner bieten wir Ihnen das gesamte Sortiment vor Ort.
+						V-ZUG steht seit 1913 für Schweizer Qualität – dazu zählt auch das
+						CO2-neutrale Werk Sulgen, laut V-ZUG die "modernste Kühlgerätefabrik
+						Europas". Als offizieller Regionalpartner beraten wir Sie mit direktem
+						Zugang zu Herstellerwissen und aktueller Produktkompetenz – kein
+						Graumarkt-Handel.
 					</p>
 				</div>
 			</div>
@@ -205,7 +289,7 @@ const showroom = [
 					sizes="(min-width: 768px) 50vw, 100vw"
 				/>
 				<div class="flex flex-1 flex-col p-6">
-					<h2 class="text-lg font-semibold text-slate-900">Rezeptideen entdecken</h2>
+					<h2 class={h3}>Rezeptideen entdecken</h2>
 					<p class="mt-2 text-sm text-slate-600">
 						Was lässt sich mit Ihrem V-ZUG Gerät alles zaubern? Auf vzug.com
 						finden Sie zahlreiche Rezepte, abgestimmt auf Ihre Geräte.
@@ -222,13 +306,5 @@ const showroom = [
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-		<h2 class="text-2xl font-semibold text-slate-900">Besuchen Sie uns</h2>
-		<p class="mt-3 text-slate-600">
-			Fortunastrasse 2, CH-9437 Marbach · Besuche nach Vereinbarung – rufen Sie uns
-			vorab kurz an.
-		</p>
 	</section>
 </Layout>
