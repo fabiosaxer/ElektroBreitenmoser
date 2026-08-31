@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import installation from '../assets/images/ueber-uns-installation.jpg';
+
+// TODO: Platzhalter – mit den echten Meilensteinen der Firmengeschichte ersetzen.
+const milestones = [
+	{ year: '19XX', title: 'Gründung', text: 'TODO: Gründungsjahr und -geschichte des Unternehmens ergänzen.' },
+	{ year: '19XX', title: 'Generationenwechsel', text: 'TODO: Wichtige Etappe in der Firmengeschichte ergänzen.' },
+	{ year: '19XX', title: 'V-ZUG Regionalpartner', text: 'TODO: Seit wann Partnerschaft mit V-ZUG besteht.' },
+	{ year: '20XX', title: 'Standort Fortunastrasse', text: 'TODO: Bezug/Ausbau des heutigen Standorts in Marbach.' },
+	{ year: 'Heute', title: 'Elektro Breitenmoser AG', text: 'Unter der Leitung von Daniel Benz beraten wir Sie persönlich rund um V-ZUG Geräte.' },
+];
+---
+
+<Layout title="Über uns" description="Die Geschichte der Elektro Breitenmoser AG – seit fast 100 Jahren V-ZUG Partner im Rheintal.">
+	<section class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+		<h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">Über uns</h1>
+		<p class="mx-auto mt-4 max-w-2xl text-slate-600">
+			Seit fast 100 Jahren stehen wir für persönliche Beratung, Schweizer
+			Qualität und Zuverlässigkeit – als V-ZUG Regionalpartner mitten im
+			Rheintal.
+		</p>
+	</section>
+
+	<section class="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
+		<ol class="relative">
+			<div
+				class="absolute inset-y-0 left-4 w-0.5 bg-gradient-to-b from-brand via-brand to-accent md:left-1/2 md:-translate-x-1/2"
+			>
+			</div>
+			{
+				milestones.map((m, i) => (
+					<li class="relative mb-10 pl-12 last:mb-0 md:mb-16 md:grid md:grid-cols-2 md:gap-10 md:pl-0">
+						<span
+							class="absolute left-4 top-1.5 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-accent shadow-[0_0_0_3px_var(--color-brand)] md:left-1/2"
+						/>
+						<div
+							class:list={[
+								'rounded-xl border border-slate-200 bg-white p-6 shadow-sm',
+								i % 2 === 0
+									? 'md:col-start-1 md:text-right'
+									: 'md:col-start-2 md:row-start-1',
+							]}
+						>
+							<span class="text-2xl font-bold text-accent">{m.year}</span>
+							<h2 class="mt-1 text-lg font-semibold text-slate-900">{m.title}</h2>
+							<p class="mt-2 text-slate-600">{m.text}</p>
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="bg-slate-50 py-16">
+		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
+			<Image
+				src={installation}
+				alt="Von der Elektro Breitenmoser AG installierter V-ZUG Waschturm"
+				class="rounded-lg object-cover shadow-sm"
+				widths={[400, 800, 1200]}
+				sizes="(min-width: 768px) 50vw, 100vw"
+			/>
+			<div>
+				<h2 class="text-2xl font-semibold text-slate-900">Persönlich vor Ort</h2>
+				<p class="mt-3 text-slate-600">
+					Ob Beratung im Showroom, Lieferung oder fachgerechte Installation –
+					wir begleiten Sie von der Auswahl bis zum fertig eingebauten Gerät.
+				</p>
+				<a
+					href="/geraeteanfrage"
+					class="mt-6 inline-block rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
+				>
+					Geräteanfrage stellen
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
