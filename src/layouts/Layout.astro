@@ -51,6 +51,7 @@ const localBusinessJsonLd = {
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalUrl} />
 		<title>{title} · Elektro Breitenmoser AG</title>
+		{/* set:html hier nur mit statischen, entwicklerkontrollierten Werten befüllen - kein Nutzer-/CMS-Input ohne Sanitizing */}
 		<script type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)} />
 	</head>
 	<body class="flex min-h-screen flex-col bg-white text-slate-800">

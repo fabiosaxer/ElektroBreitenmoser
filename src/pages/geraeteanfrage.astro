@@ -16,6 +16,14 @@ const formEndpoint = 'https://formspree.io/f/REPLACE_ME';
 
 		<form action={formEndpoint} method="POST" class="mt-8 space-y-5">
 			<p class="text-xs text-slate-500">Mit * markierte Felder sind Pflichtfelder.</p>
+			<input
+				type="text"
+				name="_gotcha"
+				tabindex="-1"
+				autocomplete="off"
+				class="absolute left-[-9999px]"
+				aria-hidden="true"
+			/>
 			<div>
 				<label for="name" class="block text-sm font-medium text-slate-700">Name *</label>
 				<input
@@ -97,10 +105,12 @@ const formEndpoint = 'https://formspree.io/f/REPLACE_ME';
 	const params = new URLSearchParams(window.location.search);
 	const slug = params.get('geraet');
 	if (slug) {
-		const option = document.querySelector<HTMLOptionElement>(`#device option[data-slug="${slug}"]`);
 		const select = document.getElementById('device');
-		if (option && select instanceof HTMLSelectElement) {
-			select.value = option.value;
+		if (select instanceof HTMLSelectElement) {
+			const option = Array.from(select.options).find((o) => o.dataset.slug === slug);
+			if (option) {
+				select.value = option.value;
+			}
 		}
 	}
 </script>
