@@ -12,16 +12,46 @@ const {
 	title,
 	description = 'Elektro Breitenmoser AG – Ihr V-ZUG Fachhändler und Servicepartner in Marbach (Rheintal).',
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+
+const localBusinessJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	name: 'Elektro Breitenmoser AG',
+	image: new URL('/logo.png', Astro.site).toString(),
+	url: Astro.site?.toString(),
+	telephone: '+41717771276',
+	email: 'info@elektrobreitenmoser.ch',
+	taxID: 'CHE-108.098.718',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: 'Fortunastrasse 2',
+		postalCode: '9437',
+		addressLocality: 'Marbach',
+		addressRegion: 'SG',
+		addressCountry: 'CH',
+	},
+	areaServed: {
+		'@type': 'AdministrativeArea',
+		name: 'Rheintal',
+	},
+	// Kein openingHoursSpecification: Besuche sind nur nach Vereinbarung möglich,
+	// es gibt keine festen Öffnungstage/-zeiten zu deklarieren (siehe docs/research.md).
+	sameAs: ['https://www.instagram.com/breitenmoserag_vzug/'],
+};
 ---
 
-<html lang="de">
+<html lang="de-CH">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
 		<title>{title} · Elektro Breitenmoser AG</title>
+		<script type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)} />
 	</head>
 	<body class="flex min-h-screen flex-col bg-white text-slate-800">
 		<Header />
