@@ -5,6 +5,21 @@ import ApplianceIcon from '../components/ApplianceIcon.astro';
 import { rooms } from '../data/appliances';
 import heroStandort from '../assets/images/hero-standort.jpg';
 import installation from '../assets/images/ueber-uns-installation.jpg';
+import showroomKueche from '../assets/images/showroom-kueche.jpg';
+import showroomKuechengeraete from '../assets/images/showroom-kuechengeraete.jpg';
+import showroomWeinkuehler from '../assets/images/showroom-weinkuehler.jpg';
+import showroomWaeschetuerme from '../assets/images/showroom-waeschetuerme.jpg';
+import servicefahrzeugIdbuzz from '../assets/images/servicefahrzeug-idbuzz.jpg';
+import symbolbildLieferung from '../assets/images/symbolbild-lieferung.jpg';
+import kuehlschrankfabrikBanner from '../assets/images/kuehlschrankfabrik-banner.jpg';
+import rezepteInspiration from '../assets/images/rezepte-inspiration.jpg';
+
+const showroom = [
+	{ src: showroomKueche, alt: 'V-ZUG Kücheninsel mit Kühlschrank und Backöfen im Showroom' },
+	{ src: showroomKuechengeraete, alt: 'V-ZUG Einbaugeräte in offener Küche' },
+	{ src: showroomWeinkuehler, alt: 'V-ZUG Weinkühlschrank, eingebaut' },
+	{ src: showroomWaeschetuerme, alt: 'V-ZUG Waschtürme im Showroom' },
+];
 ---
 
 <Layout title="Start" description="Ihr V-ZUG Fachhändler und Servicepartner im Rheintal – persönliche Beratung seit fast 100 Jahren.">
@@ -76,6 +91,28 @@ import installation from '../assets/images/ueber-uns-installation.jpg';
 	</section>
 
 	<section class="bg-slate-50 py-16">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6">
+			<h2 class="text-2xl font-semibold text-slate-900">Einblick in unser Sortiment</h2>
+			<p class="mt-2 max-w-2xl text-slate-600">
+				Eindrücke aus dem V-ZUG Showroom – von der Kücheninsel bis zum Waschturm.
+			</p>
+			<div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+				{
+					showroom.map((item) => (
+						<Image
+							src={item.src}
+							alt={item.alt}
+							class="aspect-square w-full rounded-lg object-cover"
+							widths={[300, 500, 800]}
+							sizes="(min-width: 768px) 25vw, 50vw"
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16">
 		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
 			<Image
 				src={installation}
@@ -102,42 +139,86 @@ import installation from '../assets/images/ueber-uns-installation.jpg';
 		</div>
 	</section>
 
+	<section class="bg-slate-50 py-16">
+		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
+			<div class="grid grid-cols-2 gap-4 md:order-2">
+				<Image
+					src={servicefahrzeugIdbuzz}
+					alt="Servicefahrzeug der Elektro Breitenmoser AG"
+					class="col-span-2 rounded-lg object-cover shadow-sm"
+					widths={[400, 800, 1200]}
+					sizes="(min-width: 768px) 50vw, 100vw"
+				/>
+				<Image
+					src={symbolbildLieferung}
+					alt="Versand von V-ZUG Geräten in die ganze Schweiz"
+					class="col-span-2 aspect-[3/1] rounded-lg object-cover shadow-sm"
+					widths={[400, 800, 1200]}
+					sizes="(min-width: 768px) 50vw, 100vw"
+				/>
+			</div>
+			<div>
+				<h2 class="text-2xl font-semibold text-slate-900">Service &amp; Lieferung</h2>
+				<ul class="mt-3 space-y-2 text-slate-600">
+					<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
+					<li>Geräteservice und Support</li>
+					<li>Versand in die ganze Schweiz</li>
+				</ul>
+				<p class="mt-4 text-sm text-slate-500">
+					Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
+					Ersatzteilbedarf wenden Sie sich bitte an V-ZUG direkt: 058 767 67 84.
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<section class="py-16">
-		<div class="mx-auto max-w-6xl px-4 sm:px-6">
-			<div class="grid gap-10 md:grid-cols-2">
-				<div>
-					<h2 class="text-2xl font-semibold text-slate-900">Unsere Leistungen</h2>
-					<ul class="mt-3 space-y-2 text-slate-600">
-						<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
-						<li>Geräteservice und Support</li>
-						<li>Versand in die ganze Schweiz</li>
-					</ul>
-					<p class="mt-4 text-sm text-slate-500">
-						Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
-						Ersatzteilbedarf wenden Sie sich bitte an V-ZUG direkt: 058 767 67 84.
+		<div class="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2">
+			<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200">
+				<Image
+					src={kuehlschrankfabrikBanner}
+					alt="V-ZUG Kühlschrankwerk in Sulgen"
+					class="h-40 w-full object-cover"
+					widths={[400, 800]}
+					sizes="(min-width: 768px) 50vw, 100vw"
+				/>
+				<div class="flex flex-1 flex-col p-6">
+					<img
+						src="/vzug-partner-badge.png"
+						alt="V-ZUG Regionalpartner"
+						class="h-12 w-auto"
+					/>
+					<h2 class="mt-4 text-lg font-semibold text-slate-900">V-ZUG Regionalpartner</h2>
+					<p class="mt-2 text-sm text-slate-600">
+						V-ZUG steht seit 1913 für Schweizer Qualität. Im Werk Sulgen entsteht
+						seit 2022 CO2-neutral die modernste Kühlgerätefabrik Europas – als
+						Regionalpartner bieten wir Ihnen das gesamte Sortiment vor Ort.
+					</p>
+				</div>
+			</div>
+			<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200">
+				<Image
+					src={rezepteInspiration}
+					alt="Inspiration für Rezepte mit V-ZUG Geräten"
+					class="h-40 w-full object-cover"
+					widths={[400, 800]}
+					sizes="(min-width: 768px) 50vw, 100vw"
+				/>
+				<div class="flex flex-1 flex-col p-6">
+					<h2 class="text-lg font-semibold text-slate-900">Rezeptideen entdecken</h2>
+					<p class="mt-2 text-sm text-slate-600">
+						Was lässt sich mit Ihrem V-ZUG Gerät alles zaubern? Auf vzug.com
+						finden Sie zahlreiche Rezepte, abgestimmt auf Ihre Geräte.
 					</p>
 					<a
 						href="https://www.vzug.com/ch/de/recipes"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark"
+						class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark"
 					>
-						Rezeptideen für Ihr V-ZUG Gerät entdecken
+						Rezepte entdecken
 						<span aria-hidden="true">→</span>
 					</a>
-				</div>
-				<div class="rounded-xl border border-slate-200 bg-slate-50 p-6">
-					<img
-						src="/vzug-partner-badge.png"
-						alt="V-ZUG Regionalpartner"
-						class="h-14 w-auto"
-					/>
-					<h2 class="mt-4 text-lg font-semibold text-slate-900">V-ZUG Regionalpartner</h2>
-					<p class="mt-2 text-sm text-slate-600">
-						V-ZUG steht seit 1913 für Schweizer Qualität und Präzision – als
-						offizieller Regionalpartner bieten wir Ihnen das gesamte Sortiment
-						samt persönlicher Beratung vor Ort.
-					</p>
 				</div>
 			</div>
 		</div>

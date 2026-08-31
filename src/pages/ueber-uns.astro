@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import installation from '../assets/images/ueber-uns-installation.jpg';
+import showroomWeinkuehler from '../assets/images/showroom-weinkuehler.jpg';
+import showroomGeschichteVzug from '../assets/images/showroom-geschichte-vzug.jpg';
+import kuehlschrankfabrikInnen from '../assets/images/kuehlschrankfabrik-innen.jpg';
 
 // TODO: Platzhalter – mit den echten Meilensteinen der Firmengeschichte ersetzen.
 const milestones = [
@@ -53,20 +55,50 @@ const milestones = [
 		</ol>
 	</section>
 
+	<section class="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
+		<div class="grid items-center gap-10 rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8 md:grid-cols-2">
+			<div class="grid grid-cols-2 gap-3">
+				<Image
+					src={showroomGeschichteVzug}
+					alt="Historische V-ZUG Waschmaschinen im Museum"
+					class="col-span-2 rounded-lg object-cover shadow-sm"
+					widths={[400, 800, 1200]}
+					sizes="(min-width: 768px) 25vw, 50vw"
+				/>
+				<Image
+					src={kuehlschrankfabrikInnen}
+					alt="Produktion im V-ZUG Werk Sulgen"
+					class="col-span-2 aspect-[3/1] rounded-lg object-cover shadow-sm"
+					widths={[400, 800, 1200]}
+					sizes="(min-width: 768px) 25vw, 50vw"
+				/>
+			</div>
+			<div>
+				<h2 class="text-2xl font-semibold text-slate-900">V-ZUG seit 1913</h2>
+				<p class="mt-3 text-slate-600">
+					Von der ersten vollautomatischen Waschmaschine bis zur modernen,
+					CO2-neutralen Produktion im Werk Sulgen: Als Regionalpartner stehen
+					wir für dieselbe Schweizer Tradition aus Präzision und Qualität, die
+					V-ZUG seit über 100 Jahren auszeichnet.
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<section class="bg-slate-50 py-16">
 		<div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
 			<Image
-				src={installation}
-				alt="Von der Elektro Breitenmoser AG installierter V-ZUG Waschturm"
+				src={showroomWeinkuehler}
+				alt="V-ZUG Weinkühlschrank im Showroom"
 				class="rounded-lg object-cover shadow-sm"
 				widths={[400, 800, 1200]}
 				sizes="(min-width: 768px) 50vw, 100vw"
 			/>
 			<div>
-				<h2 class="text-2xl font-semibold text-slate-900">Persönlich vor Ort</h2>
+				<h2 class="text-2xl font-semibold text-slate-900">Bereit für Ihr Projekt?</h2>
 				<p class="mt-3 text-slate-600">
-					Ob Beratung im Showroom, Lieferung oder fachgerechte Installation –
-					wir begleiten Sie von der Auswahl bis zum fertig eingebauten Gerät.
+					Ob neue Küche oder Waschraum – wir beraten Sie unverbindlich und
+					begleiten Sie von der Auswahl bis zum fertig eingebauten Gerät.
 				</p>
 				<a
 					href="/geraeteanfrage"
