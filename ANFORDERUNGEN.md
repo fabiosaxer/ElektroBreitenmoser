@@ -78,7 +78,7 @@
 
 ## 8. Offene Punkte (mit Fabio/Kunde zu klären)
 
-- [ ] Web3Forms-Account erstellen, Access-Key liefern (siehe README.md, Abschnitt "Kontaktformular")
+- [x] Web3Forms-Account erstellen, Access-Key liefern (siehe README.md, Abschnitt "Kontaktformular")
 - [x] Finale Bild-/Logo-Assets in hoher Auflösung beschafft (siehe `pictures/`, kuratierte Auswahl in `src/assets/images` und `public/`)
 - [x] Hauptdomain bestätigt: `vzugshop.ch` (Alias: `elektrobreitenmoser.ch`, `vzug-spezialist.ch`)
 - [ ] Zugang zu Plesk bei Hosttime für Domain `vzugshop.ch` (Git-Integration einrichten) – übernimmt Fabio selbst
