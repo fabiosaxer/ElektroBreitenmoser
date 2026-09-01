@@ -4,11 +4,17 @@
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# Security-Header (CSP, HSTS, X-Frame-Options, ...) werden NICHT mehr hier
-# gesetzt, da Plesk/nginx echte GET-Aufrufe auf statische Dateien am
-# Apache-Backend vorbei ausliefert und .htaccess-Header-Direktiven dabei
-# ignoriert wurden (siehe docs/live-audit-summary.md). Sie sind stattdessen
-# direkt in Plesk unter "Apache-Einstellungen -> Zusätzliche Header" gesetzt
-# (Domain vzugshop.ch/www.vzugshop.ch, Format "Name: Wert" pro Zeile).
-# Diese Datei hier nicht wieder mit denselben Headern ergänzen, sonst werden
-# sie doppelt ausgeliefert.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# Security-Header (CSP, HSTS, X-Frame-Options, ...) werden bewusst NICHT hier
+# gesetzt, sondern in Plesk unter "Apache-Einstellungen -> Zusätzliche Header"
+# (Domain vzugshop.ch/www.vzugshop.ch, Format "Name: Wert" pro Zeile). Das war
+# nötig, weil Plesks "Intelligente Bearbeitung statischer Dateien" GET-Aufrufe
+# auf statische Dateien früher am Apache-Backend vorbeigeleitet hat, wodurch
+# .htaccess-Header ignoriert wurden (siehe docs/live-audit-summary.md). Diese
+# Option ist inzwischen deaktiviert, Apache verarbeitet nun alle Anfragen -
+# Header trotzdem nicht hier duplizieren, Plesk bleibt die einzige Quelle.
