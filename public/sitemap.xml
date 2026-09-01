@@ -7,6 +7,96 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://vzugshop.ch/geraete/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/freistehende-gefriergeraete/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/steamer/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/backoefen-herde/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/schubladen/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/mikrowellen/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/kaffeevollautomaten/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/kochfelder/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/kochfelder-dunstabzug/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/dunstabzuege/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/geschirrspueler/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/kuehl-gefrierschraenke/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/waschmaschinen/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/waeschetrockner/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/geraete/waschtuerme/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
 		<loc>https://vzugshop.ch/ueber-uns/</loc>
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>monthly</changefreq>
@@ -17,6 +107,12 @@
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://vzugshop.ch/faq/</loc>
+		<lastmod>2026-09-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://vzugshop.ch/impressum/</loc>

@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ApplianceIcon from '../../components/ApplianceIcon.astro';
+import { rooms } from '../../data/appliances';
+
+export function getStaticPaths() {
+	return rooms.flatMap((r) =>
+		r.items.map((item) => ({
+			params: { slug: item.slug },
+			props: { item, room: r.room },
+		})),
+	);
+}
+
+const { item, room } = Astro.props;
+---
+
+<Layout
+	title={`V-ZUG ${item.label} Marbach`}
+	description={`V-ZUG ${item.label}: persönliche Beratung bei der Elektro Breitenmoser AG in Marbach, Lieferung in die ganze Schweiz. Jetzt unverbindlich anfragen.`}
+>
+	<section class="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
+		<ApplianceIcon name={item.slug} class="mx-auto h-14 w-14 text-brand" />
+		<p class="mt-4 text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-dark">
+			{room}
+		</p>
+		<h1 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">V-ZUG {item.label}</h1>
+		<p class="mt-6 text-left text-slate-600">{item.description}</p>
+		<p class="mt-4 text-left text-slate-600">
+			Als V-ZUG Regionalpartner beraten wir Sie persönlich bei der Auswahl des passenden
+			Modells und liefern V-ZUG Geräte in die ganze Schweiz. Von der Beratung bis zur
+			fachgerechten Installation begleiten wir Sie durch den ganzen Prozess.
+		</p>
+		<a
+			href={`/geraeteanfrage/?geraet=${item.slug}`}
+			class="mt-8 inline-block rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
+		>
+			Anfrage für {item.label} stellen
+		</a>
+		<p class="mt-6">
+			<a href="/geraete/" class="text-sm font-semibold text-brand hover:text-brand-dark"
+				>← Alle Gerätekategorien</a
+			>
+		</p>
+	</section>
+</Layout>
