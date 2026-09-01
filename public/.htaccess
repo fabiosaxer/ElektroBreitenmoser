@@ -1,19 +1,14 @@
-<IfModule mod_headers.c>
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "DENY"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
-
-  # Es werden aktuell keine externen Scripts eingebunden (nur zwei
-  # entwicklereigene Inline-<script>-Blöcke ohne Hash/Nonce), daher
-  # ist 'unsafe-inline' bei script-src nötig.
-  # frame-src erlaubt das Google-Maps-Embed auf der Geräteanfrage-Seite.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' https://api.web3forms.com; frame-src https://www.google.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
-</IfModule>
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
+
+# Security-Header (CSP, HSTS, X-Frame-Options, ...) werden NICHT mehr hier
+# gesetzt, da Plesk/nginx echte GET-Aufrufe auf statische Dateien am
+# Apache-Backend vorbei ausliefert und .htaccess-Header-Direktiven dabei
+# ignoriert wurden (siehe docs/live-audit-summary.md). Sie sind stattdessen
+# direkt in Plesk unter "Apache-Einstellungen -> Zusätzliche Header" gesetzt
+# (Domain vzugshop.ch/www.vzugshop.ch, Format "Name: Wert" pro Zeile).
+# Diese Datei hier nicht wieder mit denselben Headern ergänzen, sonst werden
+# sie doppelt ausgeliefert.

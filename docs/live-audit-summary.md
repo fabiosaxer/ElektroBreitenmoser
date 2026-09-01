@@ -221,7 +221,7 @@ Domain-Restriktion für den `access_key` (`b82697eb-...`) im Web3Forms-Dashboard
 
 ## 6. Empfohlene Reihenfolge
 
-1. **Sofort, Plesk:** Security-Header via nginx erzwingen (4.1) – behebt den einzigen wirklich kritischen, aktuell aktiven Produktionsfehler.
+1. ~~**Sofort, Plesk:** Security-Header via nginx erzwingen (4.1)~~ **ERLEDIGT (2026-09-01):** "Intelligente Bearbeitung statischer Dateien" in Plesk deaktiviert (Apache bekommt jetzt alle Anfragen) und Header unter "Apache-Einstellungen → Zusätzliche Header" gesetzt (Format `Name: Wert`, nicht `Header always set ...` – Plesk lehnte die volle Apache-Direktiv-Syntax als ungültig ab). Per echtem GET-Request verifiziert: Header kommen an. `public/.htaccess` wurde daraufhin von den (nun doppelt ausgelieferten) Header-Direktiven bereinigt – einzige verbleibende Quelle ist Plesk selbst.
 2. **Sofort, Code:** `public/sitemap.xml` Trailing Slashes (3.1) – triviale PR, kein Risiko.
 3. **Diese Woche, Plesk:** Cache-Control für `/_astro/` (4.2) – spürbarer Performance-Gewinn für wiederkehrende Besucher, kann mit Punkt 1 zusammen eingefügt werden.
 4. **Nach DNS-Propagationscheck (24–48h), Plesk:** `www` → Apex 301 (4.3).
