@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.elektrobreitenmoser.ch/sitemap.xml
+Sitemap: https://vzugshop.ch/sitemap.xml
