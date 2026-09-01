@@ -1,5 +1,12 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Kanonische Domain: vzugshop.ch ohne "www." (DNS ist seit 2026-09-01 überall
+  # propagiert, dieser Redirect wurde bewusst erst danach aktiviert). Ein Hop
+  # deckt gleichzeitig den HTTPS-Umstieg ab, falls jemand http://www... aufruft.
+  RewriteCond %{HTTP_HOST} ^www\.vzugshop\.ch$ [NC]
+  RewriteRule ^ https://vzugshop.ch%{REQUEST_URI} [L,R=301]
+
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
