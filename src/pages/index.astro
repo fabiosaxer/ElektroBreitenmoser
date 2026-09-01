@@ -50,6 +50,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 			class="h-[420px] w-full object-cover sm:h-[520px]"
 			widths={[640, 1024, 1600]}
 			sizes="100vw"
+			quality={75}
 			loading="eager"
 			fetchpriority="high"
 		/>
@@ -65,7 +66,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 				</p>
 				<div class="mt-8 flex flex-wrap justify-center gap-4">
 					<a
-						href="/geraeteanfrage"
+						href="/geraeteanfrage/"
 						class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark"
 					>
 						Geräteanfrage stellen
@@ -170,7 +171,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 					<div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
 						{r.items.map((item) => (
 							<a
-								href={`/geraeteanfrage?geraet=${item.slug}`}
+								href={`/geraeteanfrage/?geraet=${item.slug}`}
 								class="group flex flex-col items-center gap-3 rounded-xl border border-brand-100 bg-white p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand-50 hover:shadow-md"
 							>
 								<ApplianceIcon
@@ -233,7 +234,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 						Installation bei Ihnen zu Hause.
 					</p>
 					<a
-						href="/ueber-uns"
+						href="/ueber-uns/"
 						class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
 					>
 						Mehr über uns erfahren

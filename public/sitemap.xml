@@ -7,25 +7,25 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://vzugshop.ch/ueber-uns</loc>
+		<loc>https://vzugshop.ch/ueber-uns/</loc>
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://vzugshop.ch/geraeteanfrage</loc>
+		<loc>https://vzugshop.ch/geraeteanfrage/</loc>
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://vzugshop.ch/impressum</loc>
+		<loc>https://vzugshop.ch/impressum/</loc>
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.3</priority>
 	</url>
 	<url>
-		<loc>https://vzugshop.ch/datenschutz</loc>
+		<loc>https://vzugshop.ch/datenschutz/</loc>
 		<lastmod>2026-09-01</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.3</priority>

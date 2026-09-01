@@ -8,15 +8,19 @@ interface Props {
 	title: string;
 	description?: string;
 	noindex?: boolean;
+	ogImage?: string;
 }
 
 const {
 	title,
 	description = 'Elektro Breitenmoser AG – Ihr V-ZUG Fachhändler und Servicepartner in Marbach (Rheintal).',
 	noindex = false,
+	ogImage = '/og-default.jpg',
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+const fullTitle = `${title} · Elektro Breitenmoser AG`;
 
 const localBusinessJsonLd = {
 	'@context': 'https://schema.org',
@@ -57,7 +61,21 @@ const localBusinessJsonLd = {
 		<meta name="description" content={description} />
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		<link rel="canonical" href={canonicalUrl} />
-		<title>{title} · Elektro Breitenmoser AG</title>
+		<title>{fullTitle}</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Elektro Breitenmoser AG" />
+		<meta property="og:locale" content="de_CH" />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
 		{/* set:html hier nur mit statischen, entwicklerkontrollierten Werten befüllen - kein Nutzer-/CMS-Input ohne Sanitizing */}
 		<script type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)} />
 	</head>
