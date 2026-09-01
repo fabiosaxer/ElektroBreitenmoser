@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Vielen Dank"
+	description="Ihre Geräteanfrage bei der Elektro Breitenmoser AG ist eingegangen."
+	noindex
+>
+	<section class="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
+		<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-50">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="h-8 w-8 text-brand"
+				aria-hidden="true"
+			>
+				<path d="M20 6L9 17l-5-5" />
+			</svg>
+		</div>
+		<h1 class="mt-6 text-3xl font-bold text-slate-900">Vielen Dank für Ihre Anfrage</h1>
+		<p class="mt-4 text-slate-600">
+			Ihre Geräteanfrage ist bei uns eingegangen. Wir melden uns so rasch wie
+			möglich persönlich bei Ihnen – in der Regel innerhalb von 1–2 Werktagen.
+		</p>
+		<p class="mt-4 text-slate-600">
+			Falls es eilt, erreichen Sie uns auch direkt telefonisch: <a
+				class="font-semibold text-brand hover:text-brand-dark"
+				href="tel:0717771276">071 777 12 76</a
+			>
+		</p>
+		<div class="mt-8 flex flex-wrap justify-center gap-4">
+			<a
+				href="/"
+				class="rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
+			>
+				Zur Startseite
+			</a>
+			<a
+				href="/ueber-uns"
+				class="rounded-md border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:border-brand hover:text-brand"
+			>
+				Mehr über uns
+			</a>
+		</div>
+	</section>
+</Layout>
