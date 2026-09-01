@@ -78,6 +78,7 @@
 - [x] UID: CHE-108.098.718
 - [x] Handelsregisternummer: CH-320-3014903-8
 - [x] Verantwortliche Person: Daniel Benz
+- [x] Firmengeschichte/Meilensteine für "Über uns"-Zeitstrahl (Zeitungsartikel erhalten, Gründungsjahr 1933 gesetzt)
 - [ ] Google-Maps-Embed bzw. Standort-Widget gewünscht?
 - [ ] Mehrsprachigkeit nötig, oder reicht Deutsch? (aktuell: nur Deutsch angenommen)
 - [ ] Datenschutzfreundliche Analytics gewünscht (z. B. Plausible)?

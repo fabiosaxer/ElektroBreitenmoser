@@ -13,13 +13,21 @@ Aussagen vermerkt; unbelegte Annahmen sind explizit als solche gekennzeichnet
 - **Firma:** Elektro Breitenmoser AG, Fortunastrasse 2, CH-9437 Marbach (Rheintal, Kanton SG).
 - **Rechtsform/Register:** Aktiengesellschaft, Handelsregister-Nr. CH-320.3.014.903-8,
   UID CHE-108.098.718, Aktienkapital CHF 100'000 (laut Moneyhouse-Handelsregisterauszug).
-- **Geschichte:** Unternehmen selbst kommuniziert "seit bald 100 Jahren" / "seit fast 100
-  Jahren" im Rheintal tätig; im offiziellen Handelsregister ist die Eintragung auf
-  24.08.1942 datiert, während andere Verzeichnisse 1932 als Geschäftsbeginn nennen
-  (laut Moneyhouse/Kompass-Einträgen). **Offene Frage/Annahme:** Diskrepanz
-  1932 vs. 1942 sollte mit dem Kunden (Daniel Benz) geklärt werden, bevor eine
-  konkrete Jahreszahl auf der Website verwendet wird – "seit fast 100 Jahren" ist
-  in beiden Fällen sachlich korrekt und daher die sichere Formulierung.
+- **Geschichte:** GEKLÄRT (Zeitungsartikel "Geschichte zur Elektro Breitenmoser AG",
+  vom Kunden bereitgestellt, 2026-09-01): Willi Breitenmoser sen. gründete 1933 (im
+  Artikel selbst als 1932 angegeben, vom Kunden für die Website auf **1933**
+  korrigiert/bestätigt) die Einzelfirma in Rebstein. 1959 Übernahme durch Willi
+  Breitenmoser jun. nach Meisterprüfung und Tod des Vaters. 1975 (10.3.) Umwandlung
+  in die Elektro Breitenmoser AG. 1990 Verkauf an die Elektro Steiger AG, Altstätten
+  (kein familieninterner Nachfolger). 1997 Übernahme durch Daniel Benz, Ausbau des
+  V-ZUG-Verkaufs. 2009 Suche nach Bauland wegen Platzbedarf; 2013 Bezug des Neubaus
+  an der Fortunastrasse 2, Marbach – laut Artikel erster Plus-Energie-Gewerbebau der
+  Schweiz, ausgezeichnet von der Solar Agentur Schweiz für den Minergie-P-Neubau.
+  Weiterer Geschäftszweig: Photovoltaik-Anlagen (Partnerschaft mit Jansen AG,
+  Oberriet). Die frühere Handelsregister-Diskrepanz (24.08.1942 vs. 1932) ist damit
+  nicht mehr die primäre Quelle – die Firmenhistorie selbst (Zeitungsartikel) gilt
+  als massgeblich; "seit fast 100 Jahren" ist mit Gründungsjahr 1933 (93 Jahre bis
+  2026) weiterhin sachlich korrekt.
 - **Geschäftsführung:** Daniel Benz (laut ANFORDERUNGEN.md / bestehendem Prototyp).
 - **Geschäftszweck (laut Handelsregister):** Elektroinstallationen und
   Industriedienstleistungen sowie Handel und Reparatur von elektrischen Anlagen,
@@ -319,11 +327,12 @@ fertige, datenbasierte Keyword-Strategie.
 
 ## 5. Offene Fragen / Annahmen (Zusammenfassung)
 
-- **Gründungsjahr uneinheitlich** (1932 laut Firmendarstellung/Verzeichnissen vs.
-  24.08.1942 laut Handelsregister-Eintragung) – mit Daniel Benz klären, bevor
-  eine exakte Jahreszahl (statt "seit fast 100 Jahren") verwendet wird.
-  Betrifft direkt die TODO-Platzhalter in `src/pages/ueber-uns.astro`
-  (Meilensteine-Timeline).
+- ~~**Gründungsjahr uneinheitlich**~~ GEKLÄRT: Kunde hat den Zeitungsartikel zur
+  Firmengeschichte geliefert und Gründungsjahr **1933** für die Website bestätigt
+  (Artikel selbst nennt 1932; Handelsregister-Datum 24.08.1942 betrifft
+  vermutlich einen späteren Eintragungs-/Formalakt, nicht die tatsächliche
+  Geschäftsgründung). Die Meilensteine-Timeline in `src/pages/ueber-uns.astro`
+  wurde entsprechend mit echten Daten befüllt (1933/1959/1975/1997/2013/Heute).
 - **Keine offiziellen Zielgruppendaten** vorhanden – Segmentierung in Abschnitt 2
   ist weiterhin primär plausibilitätsbasiert (Standort, Produktkategorie,
   Branchenlogik); eine Nachrecherche zu Rezensionen/Social Media (local.ch,
