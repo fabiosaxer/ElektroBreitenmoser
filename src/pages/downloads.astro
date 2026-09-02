@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const downloads = [
+	{
+		title: 'Tipps für Ihren Geschirrspüler',
+		description: 'Für beste Reinigungs- und Trocknungsresultate – jeden Tag.',
+		href: '/downloads/tipps-geschirrspueler.pdf',
+	},
+	{
+		title: 'Pflegetipps für Ihre Waschmaschine',
+		description: 'Vermeiden von schlechten Gerüchen und Rückständen.',
+		href: '/downloads/pflegetipps-waschmaschine.pdf',
+	},
+];
+---
+
+<Layout
+	title="Downloads &amp; Pflegetipps"
+	description="Praktische V-ZUG Pflege- und Anwendungstipps für Geschirrspüler, Waschmaschine und weitere Geräte zum kostenlosen Download."
+>
+	<section class="mx-auto max-w-2xl px-4 py-16 sm:px-6">
+		<h1 class="text-3xl font-bold text-slate-900">Downloads &amp; Pflegetipps</h1>
+		<p class="mt-3 text-slate-600">
+			Damit Sie lange Freude an Ihrem V-ZUG Gerät haben, finden Sie hier praktische
+			Pflege- und Anwendungstipps zum kostenlosen Download.
+		</p>
+		<div class="mt-8 space-y-4">
+			{
+				downloads.map((d) => (
+					<a
+						href={d.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.75"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-8 w-8 flex-shrink-0 text-brand"
+							aria-hidden="true"
+						>
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+							<path d="M14 2v6h6" />
+						</svg>
+						<span class="flex-1">
+							<span class="block text-base font-semibold text-slate-900">{d.title}</span>
+							<span class="mt-1 block text-sm text-slate-600">{d.description}</span>
+						</span>
+						<span class="flex-shrink-0 text-sm font-semibold text-brand">PDF ↓</span>
+					</a>
+				))
+			}
+		</div>
+		<p class="mt-8 text-slate-600">
+			Fragen zu Ihrem Gerät? <a
+				href="/geraeteanfrage/"
+				class="font-semibold text-brand hover:text-brand-dark">Stellen Sie uns eine Anfrage</a
+			>.
+		</p>
+	</section>
+</Layout>
