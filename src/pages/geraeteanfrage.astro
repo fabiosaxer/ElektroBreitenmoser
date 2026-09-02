@@ -4,17 +4,16 @@ import { rooms } from '../data/appliances';
 
 const web3formsAccessKey = 'b82697eb-f0f3-4c3f-b9f1-9073e53d8d7a';
 
-const budgetRanges = [
-	'Bis CHF 2’000',
-	'CHF 2’000 – 5’000',
-	'CHF 5’000 – 10’000',
-	'CHF 10’000 – 20’000',
-	'Über CHF 20’000',
-	'Noch offen / möchte ich besprechen',
+const priceCategories = [
+	'Auslaufmodelle, Importware, Schnäppchenecke',
+	'Swiss Made Basic',
+	'Swiss Made Classic',
+	'Swiss Made Premium',
+	'Swiss Made Premium De Luxe',
 ];
 ---
 
-<Layout title="V-ZUG Geräteanfrage Marbach" description="Unverbindliche Geräteanfrage für V-ZUG Geräte. Elektro Breitenmoser AG in Marbach berät Sie persönlich – von der Auswahl bis zur Installation im Rheintal.">
+<Layout title="V-ZUG Geräteanfrage Marbach" description="Unverbindliche Geräteanfrage für V-ZUG Geräte. Elektro Breitenmoser AG in Marbach berät Sie persönlich – von der Auswahl bis zur Installation.">
 	<section class="mx-auto max-w-2xl px-4 py-16 sm:px-6">
 		<h1 class="text-3xl font-bold text-slate-900">Geräteanfrage</h1>
 		<p class="mt-3 text-slate-600">
@@ -58,13 +57,12 @@ const budgetRanges = [
 				/>
 			</div>
 			<div>
-				<label for="phone" class="block text-sm font-medium text-slate-700"
-					>Telefon (optional)</label
-				>
+				<label for="phone" class="block text-sm font-medium text-slate-700">Telefon *</label>
 				<input
 					type="tel"
 					name="phone"
 					id="phone"
+					required
 					class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
 				/>
 			</div>
@@ -94,7 +92,7 @@ const budgetRanges = [
 			</div>
 			<div>
 				<label for="budget" class="block text-sm font-medium text-slate-700"
-					>Budgetrahmen (optional)</label
+					>Preiskategorie (optional)</label
 				>
 				<select
 					name="budget"
@@ -102,7 +100,7 @@ const budgetRanges = [
 					class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
 				>
 					<option value="">Keine Angabe</option>
-					{budgetRanges.map((range) => <option value={range}>{range}</option>)}
+					{priceCategories.map((category) => <option value={category}>{category}</option>)}
 				</select>
 			</div>
 			<div>

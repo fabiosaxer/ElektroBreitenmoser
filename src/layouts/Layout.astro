@@ -13,7 +13,7 @@ interface Props {
 
 const {
 	title,
-	description = 'Elektro Breitenmoser AG – Ihr V-ZUG Fachhändler und Servicepartner in Marbach (Rheintal).',
+	description = 'Elektro Breitenmoser AG – Ihr V-ZUG Fachhändler und Servicepartner in Marbach. Lieferung in die ganze Schweiz.',
 	noindex = false,
 	ogImage = '/og-default.jpg',
 } = Astro.props;
@@ -40,8 +40,8 @@ const localBusinessJsonLd = {
 		addressCountry: 'CH',
 	},
 	areaServed: {
-		'@type': 'AdministrativeArea',
-		name: 'Rheintal',
+		'@type': 'Country',
+		name: 'Schweiz',
 	},
 	// Kein openingHoursSpecification: Besuche sind nur nach Vereinbarung möglich,
 	// es gibt keine festen Öffnungstage/-zeiten zu deklarieren (siehe docs/research.md).

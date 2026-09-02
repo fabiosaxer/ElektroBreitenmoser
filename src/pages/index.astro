@@ -39,14 +39,13 @@ const h2 =
 	'text-[24px] leading-[1.3] font-semibold text-slate-900 sm:text-[28px] md:text-[30px] lg:text-[34px]';
 const h3 = 'text-[18px] leading-[1.3] font-semibold text-slate-900';
 const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-dark';
-const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-vzug';
 ---
 
-<Layout title="V-ZUG Fachhändler Marbach" description="Elektro Breitenmoser AG in Marbach: traditionsreicher V-ZUG Fachhändler im Rheintal mit persönlicher Beratung, Verkauf, Lieferung und Installation.">
+<Layout title="V-ZUG Fachhändler Marbach" description="Elektro Breitenmoser AG in Marbach: traditionsreicher V-ZUG Fachhändler mit persönlicher Beratung, Verkauf, Lieferung und Installation.">
 	<section class="relative">
 		<Image
 			src={heroStandort}
-			alt="Standort und V-ZUG Showroom der Elektro Breitenmoser AG in Marbach, Rheintal"
+			alt="Standort und V-ZUG Showroom der Elektro Breitenmoser AG in Marbach"
 			class="h-[420px] w-full object-cover sm:h-[520px]"
 			widths={[640, 1024, 1600]}
 			sizes="100vw"
@@ -54,15 +53,17 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 			loading="eager"
 			fetchpriority="high"
 		/>
-		<div class="absolute inset-0 bg-gradient-to-t from-vzug/90 via-vzug/70 to-vzug/50"></div>
+		<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/10"></div>
 		<div class="absolute inset-0 flex items-center">
 			<div class="mx-auto w-full max-w-6xl px-4 text-center text-white sm:px-6">
-				<h1 class="text-[32px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] lg:text-[56px]">
+				<h1
+					class="text-[32px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] lg:text-[56px] [text-shadow:0_2px_10px_rgb(0_0_0_/_55%)]"
+				>
 					Ihr V-ZUG Fachhändler in Marbach
 				</h1>
-				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-					Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Küchen- und
-					Waschereigeräte – von der Auswahl bis zur Installation, aus dem Rheintal.
+				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/95 [text-shadow:0_1px_6px_rgb(0_0_0_/_60%)]">
+					Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Geräte für
+					Küche und Waschküche – von der Auswahl bis zur Installation.
 				</p>
 				<div class="mt-8 flex flex-wrap justify-center gap-4">
 					<a
@@ -99,7 +100,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 						<circle cx="12" cy="12" r="9" />
 						<path d="M12 7v5l3 2" />
 					</svg>
-					<span>Traditionsreich im Rheintal</span>
+					<span>Traditionsbetrieb seit bald 100 Jahren</span>
 				</li>
 				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
 					<svg
@@ -115,7 +116,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 						<circle cx="12" cy="12" r="9" />
 						<path d="M8 12.5l2.5 2.5L16 9.5" />
 					</svg>
-					<span>Beratung bis Installation aus einer Hand</span>
+					<span>Beratung bis Installation</span>
 				</li>
 				<li class="flex items-center gap-2 sm:justify-center sm:px-4">
 					<svg
@@ -217,7 +218,7 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 
 	<section class="py-16 lg:py-24">
 		<div class="mx-auto max-w-6xl px-4 sm:px-6">
-			<h2 class={h2}>Beratung, Lieferung und Installation aus einer Hand</h2>
+			<h2 class={h2}>Beratung, Lieferung und Installation</h2>
 			<div class="mt-10 grid gap-10 md:grid-cols-[1.1fr_1fr_1fr] md:items-start">
 				<Image
 					src={installation}
@@ -229,8 +230,8 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 				<div>
 					<h3 class={h3}>Persönlich vor Ort</h3>
 					<p class="mt-3 text-slate-600">
-						Als Ihr V-ZUG Fachhändler im Rheintal begleiten wir Sie persönlich –
-						von der Beratung im Showroom über die Lieferung bis zur fachgerechten
+						Als Ihr V-ZUG Fachhändler begleiten wir Sie persönlich – von der
+						Beratung im Showroom über die Lieferung bis zur fachgerechten
 						Installation bei Ihnen zu Hause.
 					</p>
 					<a
@@ -246,7 +247,6 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 					<ul class="mt-3 space-y-2 text-slate-600">
 						<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
 						<li>Lieferung in die ganze Schweiz</li>
-						<li>Geräteservice und Support</li>
 					</ul>
 					<p class="mt-4 text-sm text-slate-500">
 						Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
@@ -270,17 +270,15 @@ const kickerVzug = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-v
 				<div class="flex flex-1 flex-col p-6">
 					<img
 						src="/vzug-partner-badge.png"
-						alt="V-ZUG Regionalpartner"
+						alt="V-ZUG Partner"
 						class="h-12 w-auto self-start"
 					/>
-					<p class:list={['mt-4', kickerVzug]}>Offizielle V-ZUG Partnerschaft</p>
-					<h2 class:list={['mt-1', h3]}>V-ZUG Regionalpartner</h2>
+					<h2 class:list={['mt-4', h3]}>V-ZUG Partner</h2>
 					<p class="mt-2 text-sm text-slate-600">
 						V-ZUG steht seit 1913 für Schweizer Qualität – dazu zählt auch das
 						CO2-neutrale Werk Sulgen, laut V-ZUG die "modernste Kühlgerätefabrik
-						Europas". Als offizieller Regionalpartner beraten wir Sie mit direktem
-						Zugang zu Herstellerwissen und aktueller Produktkompetenz – kein
-						Graumarkt-Handel.
+						Europas". Als V-ZUG Partner beraten wir Sie mit direktem Zugang zu
+						Herstellerwissen und aktueller Produktkompetenz – kein Graumarkt-Handel.
 					</p>
 				</div>
 			</div>
