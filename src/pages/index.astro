@@ -19,23 +19,23 @@ import esafMunikuh2 from '../assets/images/esaf-munikuh-2.jpg';
 const showroom = [
 	{
 		src: showroomKueche,
-		alt: 'V-ZUG Kücheninsel mit Kühlschrank und Backöfen im Showroom',
-		caption: 'Kücheninsel mit V-ZUG Kühl- und Backgeräten',
+		alt: 'V‑ZUG Kücheninsel mit Kühlschrank und Backöfen im Showroom',
+		caption: 'Kücheninsel mit V‑ZUG Kühl- und Backgeräten',
 	},
 	{
 		src: showroomKuechengeraete,
-		alt: 'V-ZUG Einbaugeräte in offener Küche',
-		caption: 'V-ZUG Einbaugeräte in offener Küche',
+		alt: 'V‑ZUG Einbaugeräte in offener Küche',
+		caption: 'V‑ZUG Einbaugeräte in offener Küche',
 	},
 	{
 		src: showroomWeinkuehler,
-		alt: 'V-ZUG Weinkühlschrank, eingebaut',
-		caption: 'V-ZUG Weinkühlschrank',
+		alt: 'V‑ZUG Weinkühlschrank, eingebaut',
+		caption: 'V‑ZUG Weinkühlschrank',
 	},
 	{
 		src: showroomWaeschetuerme,
-		alt: 'V-ZUG Waschtürme im Showroom',
-		caption: 'V-ZUG Waschtürme',
+		alt: 'V‑ZUG Waschtürme im Showroom',
+		caption: 'V‑ZUG Waschtürme',
 	},
 ];
 
@@ -45,31 +45,31 @@ const h3 = 'text-[18px] leading-[1.3] font-semibold text-slate-900';
 const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-dark';
 ---
 
-<Layout title="V-ZUG Fachhändler Marbach" description="Elektro Breitenmoser AG in Marbach: traditionsreicher V-ZUG Fachhändler mit persönlicher Beratung, Verkauf, Lieferung und Installation.">
+<Layout title="V‑ZUG Fachhändler Marbach" description="Elektro Breitenmoser AG in Marbach: traditionsreicher V‑ZUG Fachhändler mit persönlicher Beratung, Verkauf, Lieferung und Installation.">
 	<section class="relative">
 		<Image
 			src={heroStandort}
-			alt="Standort und V-ZUG Showroom der Elektro Breitenmoser AG in Marbach"
-			class="h-[420px] w-full object-cover sm:h-[520px]"
+			alt="Standort und V‑ZUG Showroom der Elektro Breitenmoser AG in Marbach"
+			class="h-[320px] w-full object-cover sm:h-[520px]"
 			widths={[640, 1024, 1600]}
 			sizes="100vw"
 			quality={75}
 			loading="eager"
 			fetchpriority="high"
 		/>
-		<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/10"></div>
-		<div class="absolute inset-0 flex items-center">
-			<div class="mx-auto w-full max-w-6xl px-4 text-center text-white sm:px-6">
+		<div class="absolute inset-0 hidden bg-gradient-to-t from-black/80 via-black/40 to-transparent sm:block"></div>
+		<div class="relative bg-brand-dark px-4 py-8 text-center text-white sm:absolute sm:inset-0 sm:flex sm:items-end sm:bg-transparent sm:px-0 sm:py-0">
+			<div class="mx-auto w-full max-w-6xl sm:px-6 sm:pb-12">
 				<h1
-					class="text-[32px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] lg:text-[56px] [text-shadow:0_2px_10px_rgb(0_0_0_/_55%)]"
+					class="text-[28px] font-bold leading-[1.15] sm:text-[40px] sm:leading-[1.1] sm:[text-shadow:0_2px_10px_rgb(0_0_0_/_55%)] lg:text-[56px]"
 				>
-					Ihr V-ZUG Fachhändler in Marbach
+					Ihr V‑ZUG Fachhändler in Marbach
 				</h1>
-				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/95 [text-shadow:0_1px_6px_rgb(0_0_0_/_60%)]">
-					Seit fast 100 Jahren beraten wir Sie persönlich rund um V-ZUG Geräte für
+				<p class="mx-auto mt-3 max-w-2xl text-base text-white/95 sm:mt-4 sm:text-lg sm:[text-shadow:0_1px_6px_rgb(0_0_0_/_60%)]">
+					Seit fast 100 Jahren beraten wir Sie persönlich rund um V‑ZUG Geräte für
 					Küche und Waschküche – von der Auswahl bis zur Installation.
 				</p>
-				<div class="mt-8 flex flex-wrap justify-center gap-4">
+				<div class="mt-6 flex flex-wrap justify-center gap-4 sm:mt-8">
 					<a
 						href="/geraeteanfrage/"
 						class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark"
@@ -205,7 +205,7 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 		<div class="mx-auto max-w-6xl px-4 sm:px-6">
 			<h2 class={h2}>Einblick in unser Sortiment</h2>
 			<p class="mt-2 max-w-2xl text-slate-600">
-				Eindrücke aus dem V-ZUG Showroom – von der Kücheninsel bis zum Waschturm.
+				Eindrücke aus dem V‑ZUG Showroom – von der Kücheninsel bis zum Waschturm.
 			</p>
 			<div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
 				{
@@ -236,14 +236,14 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div class="group relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-sm">
 					<Image
 						src={lieferwagen}
-						alt="Lieferwagen der Elektro Breitenmoser AG für die Auslieferung von V-ZUG Geräten"
+						alt="Lieferwagen der Elektro Breitenmoser AG für die Auslieferung von V‑ZUG Geräten"
 						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
 						widths={[400, 800, 1200]}
 						sizes="(min-width: 768px) 33vw, 100vw"
 					/>
 					<Image
 						src={installation}
-						alt="Von der Elektro Breitenmoser AG installierter V-ZUG Waschturm"
+						alt="Von der Elektro Breitenmoser AG installierter V‑ZUG Waschturm"
 						class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 						widths={[400, 800, 1200]}
 						sizes="(min-width: 768px) 33vw, 100vw"
@@ -252,7 +252,7 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div>
 					<h3 class={h3}>Persönlich vor Ort</h3>
 					<p class="mt-3 text-slate-600">
-						Als Ihr V-ZUG Fachhändler begleiten wir Sie persönlich – von der
+						Als Ihr V‑ZUG Fachhändler begleiten wir Sie persönlich – von der
 						Beratung im Showroom über die Lieferung bis zur fachgerechten
 						Installation bei Ihnen zu Hause.
 					</p>
@@ -267,12 +267,12 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div>
 					<h3 class={h3}>Service &amp; Lieferung</h3>
 					<ul class="mt-3 space-y-2 text-slate-600">
-						<li>Persönliche Beratung und Verkauf von V-ZUG Geräten</li>
+						<li>Persönliche Beratung und Verkauf von V‑ZUG Geräten</li>
 						<li>Lieferung in die ganze Deutschschweiz</li>
 					</ul>
 					<p class="mt-4 text-sm text-slate-500">
 						Hinweis: Ersatzteile verkaufen wir nicht direkt ab Lager. Bei
-						Ersatzteilbedarf wenden Sie sich bitte an V-ZUG direkt: 058 767 67 84.
+						Ersatzteilbedarf wenden Sie sich bitte an V‑ZUG direkt: 058 767 67 84.
 					</p>
 				</div>
 			</div>
@@ -284,7 +284,7 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 			<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 border-t-4 border-t-vzug">
 				<Image
 					src={kuehlschrankfabrikBanner}
-					alt="V-ZUG Kühlschrankwerk in Sulgen"
+					alt="V‑ZUG Kühlschrankwerk in Sulgen"
 					class="h-40 w-full object-cover"
 					widths={[400, 800]}
 					sizes="(min-width: 768px) 50vw, 100vw"
@@ -292,14 +292,15 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div class="flex flex-1 flex-col p-6">
 					<img
 						src="/vzug-partner-badge.png"
-						alt="V-ZUG Partner"
+						alt="V‑ZUG Partner"
 						class="h-12 w-auto self-start"
 					/>
-					<h2 class:list={['mt-4', h3]}>V-ZUG Partner</h2>
+					<h2 class:list={['mt-4', h3]}>V‑ZUG Partner</h2>
 					<p class="mt-2 text-sm text-slate-600">
-						V-ZUG steht seit 1913 für Schweizer Qualität – dazu zählt auch das
-						CO2-neutrale Werk Sulgen, laut V-ZUG die "modernste Kühlgerätefabrik
-						Europas". Als V-ZUG Partner beraten wir Sie mit direktem Zugang zu
+						Die Wurzeln von V‑ZUG reichen bis 1913 zurück – seit Generationen
+						steht die Marke für Schweizer Qualität. Dazu zählt auch das
+						CO2-neutrale Werk Sulgen, laut V‑ZUG die "modernste Kühlgerätefabrik
+						Europas". Als V‑ZUG Partner beraten wir Sie mit direktem Zugang zu
 						Herstellerwissen und aktueller Produktkompetenz – kein Graumarkt-Handel.
 					</p>
 				</div>
@@ -308,14 +309,14 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div class="group relative h-40 w-full overflow-hidden">
 					<Image
 						src={rezepteInspiration}
-						alt="Inspiration für Rezepte mit V-ZUG Geräten"
+						alt="Inspiration für Rezepte mit V‑ZUG Geräten"
 						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
 						widths={[400, 800]}
 						sizes="(min-width: 768px) 50vw, 100vw"
 					/>
 					<Image
 						src={rezepteFingerfood}
-						alt="Feine Fingerfood-Kreationen, zubereitet mit V-ZUG Geräten"
+						alt="Feine Fingerfood-Kreationen, zubereitet mit V‑ZUG Geräten"
 						class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 						widths={[400, 800]}
 						sizes="(min-width: 768px) 50vw, 100vw"
@@ -324,7 +325,7 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 				<div class="flex flex-1 flex-col p-6">
 					<h2 class={h3}>Rezeptideen entdecken</h2>
 					<p class="mt-2 text-sm text-slate-600">
-						Was lässt sich mit Ihrem V-ZUG Gerät alles zaubern? Auf vzug.com
+						Was lässt sich mit Ihrem V‑ZUG Gerät alles zaubern? Auf vzug.com
 						finden Sie zahlreiche Rezepte, abgestimmt auf Ihre Geräte.
 					</p>
 					<a
@@ -344,23 +345,23 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 	<section class="py-16 lg:py-24">
 		<div class="mx-auto max-w-6xl px-4 sm:px-6">
 			<p class={kickerBrand}>Aktuelles</p>
-			<h2 class:list={['mt-2', h2]}>Zu Besuch am V-ZUG Partner Day</h2>
+			<h2 class:list={['mt-2', h2]}>Zu Besuch am V‑ZUG Partner Day</h2>
 			<p class="mt-3 max-w-2xl text-slate-600">
-				Als V-ZUG Partner waren wir am V-ZUG Partner Day dabei und haben uns aus
-				erster Hand über Neuheiten informiert – darunter auch V-ZUGs Engagement als
+				Als V‑ZUG Partner waren wir am V‑ZUG Partner Day dabei und haben uns aus
+				erster Hand über Neuheiten informiert – darunter auch V‑ZUGs Engagement als
 				Munipartner am Eidgenössischen Schwing- und Älplerfest (ESAF) 2028 in Thun.
 			</p>
 			<div class="mt-8 grid grid-cols-2 gap-4">
 				<Image
 					src={esafMunikuh1}
-					alt="Munikuh-Trophäe mit V-ZUG Logo am V-ZUG Partner Day, Sponsoring ESAF 2028 Thun"
+					alt="Munikuh-Trophäe mit V‑ZUG Logo am V‑ZUG Partner Day, Sponsoring ESAF 2028 Thun"
 					class="aspect-[4/3] w-full rounded-lg object-cover shadow-sm"
 					widths={[400, 800]}
 					sizes="(min-width: 768px) 25vw, 50vw"
 				/>
 				<Image
 					src={esafMunikuh2}
-					alt="ESAF 2028 Munikuh-Trophäe, V-ZUG Munipartner"
+					alt="ESAF 2028 Munikuh-Trophäe, V‑ZUG Munipartner"
 					class="aspect-[4/3] w-full rounded-lg object-cover shadow-sm"
 					widths={[400, 800]}
 					sizes="(min-width: 768px) 25vw, 50vw"
