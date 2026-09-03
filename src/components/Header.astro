@@ -4,6 +4,7 @@ const navItems = [
 	{ href: '/geraete/', label: 'Geräte' },
 	{ href: '/ueber-uns/', label: 'Über uns' },
 	{ href: '/ueber-vzug/', label: 'Über V‑ZUG' },
+	{ href: '/faq/', label: 'FAQ' },
 	{ href: '/geraeteanfrage/', label: 'Geräteanfrage' },
 ];
 
@@ -15,7 +16,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 		<a href="/" class="flex items-center">
 			<img src="/logo.png" alt="Elektro Breitenmoser AG" class="h-11 w-auto sm:h-14" />
 		</a>
-		<nav class="hidden items-center gap-6 sm:flex">
+		<nav class="hidden items-center gap-6 lg:flex">
 			{
 				navItems.map((item) => (
 					<a
@@ -43,7 +44,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 			aria-expanded="false"
 			aria-controls="mobile-menu"
 			aria-label="Menü öffnen"
-			class="flex h-11 w-11 items-center justify-center rounded-md text-slate-700 sm:hidden"
+			class="flex h-11 w-11 items-center justify-center rounded-md text-slate-700 lg:hidden"
 		>
 			<svg
 				id="icon-open"
@@ -78,7 +79,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 	</div>
 	<nav
 		id="mobile-menu"
-		class="hidden flex-col gap-1 border-t border-slate-200 px-4 py-3 sm:hidden"
+		class="hidden flex-col gap-1 border-t border-slate-200 px-4 py-3 lg:hidden"
 	>
 		{
 			navItems.map((item) => (
