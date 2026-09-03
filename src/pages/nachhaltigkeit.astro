@@ -50,12 +50,12 @@ const gebaeudeFakten = [
 					was der Atmosphäre etwa 99 Tonnen CO2 entzieht. Für dieses Konzept
 					wurde das Gebäude mit dem PEB®-Solarpreis-Diplom 2013 ausgezeichnet.
 				</p>
-				<dl class="mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-1">
+				<dl class="mt-6 grid grid-cols-1 gap-y-4">
 					{
 						gebaeudeFakten.map((fakt) => (
-							<div class="flex items-baseline justify-between gap-4 border-b border-brand-100 pb-2 sm:justify-start sm:gap-6">
+							<div class="flex items-baseline justify-between gap-4 border-b border-brand-100 pb-2">
 								<dt class="text-sm text-slate-600">{fakt.label}</dt>
-								<dd class="text-sm font-semibold text-brand-dark">{fakt.value}</dd>
+								<dd class="text-right text-sm font-semibold text-brand-dark">{fakt.value}</dd>
 							</div>
 						))
 					}
