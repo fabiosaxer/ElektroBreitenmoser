@@ -82,7 +82,7 @@ export const rooms: ApplianceRoom[] = [
 		],
 	},
 	{
-		room: 'Waschküche',
+		room: 'Waschraum',
 		items: [
 			{
 				slug: 'waschmaschinen',
