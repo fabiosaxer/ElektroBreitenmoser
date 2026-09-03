@@ -35,11 +35,12 @@ const milestones = [
 		title: 'Neubau an der Fortunastrasse in Marbach SG',
 		text: 'Das moderne Gebäude produziert doppelt so viel Energie, wie für den Betrieb benötigt wird.',
 		tone: 'brand',
+		link: { href: '/nachhaltigkeit/', label: 'Mehr zur Nachhaltigkeit unseres Gebäudes' },
 	},
 	{
 		year: 'Heute',
 		title: 'Elektro Breitenmoser AG',
-		text: 'Führender Fachhandel für V-ZUG Einbau-Haushaltgeräte mit eigenem Zentrallager. Dieses ermöglicht Expressabholungen nebst dem Lieferservice für Endkunden und regionale Handelspartner.',
+		text: 'Führender Fachhandel für V-ZUG Einbau-Haushaltgeräte mit eigenem Zentrallager. Dieses ermöglicht Expressabholungen für Endkunden und regionale Handelspartner.',
 		tone: 'brand',
 	},
 ];
@@ -92,6 +93,15 @@ const h2 =
 							</span>
 							<h2 class="mt-1 text-lg font-semibold text-slate-900">{m.title}</h2>
 							<p class="mt-2 text-slate-600">{m.text}</p>
+							{m.link && (
+								<a
+									href={m.link.href}
+									class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark"
+								>
+									{m.link.label}
+									<span aria-hidden="true">→</span>
+								</a>
+							)}
 						</div>
 					</li>
 				))
@@ -125,6 +135,13 @@ const h2 =
 					Schweizer Tradition aus Präzision und Qualität mit, die V-ZUG seit über
 					100 Jahren auszeichnet.
 				</p>
+				<a
+					href="/ueber-vzug/"
+					class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
+				>
+					Mehr über V-ZUG erfahren
+					<span aria-hidden="true">→</span>
+				</a>
 			</div>
 		</div>
 	</section>

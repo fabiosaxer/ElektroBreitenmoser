@@ -92,15 +92,19 @@ const priceCategories = [
 			</div>
 			<div>
 				<label for="budget" class="block text-sm font-medium text-slate-700"
-					>Preiskategorie (optional)</label
+					>Preiskategorie *</label
 				>
 				<select
 					name="budget"
 					id="budget"
+					required
 					class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
 				>
-					<option value="">Keine Angabe</option>
+					<option value="" disabled selected>Bitte wählen …</option>
 					{priceCategories.map((category) => <option value={category}>{category}</option>)}
+					<option value="Preiskategorie lieber telefonisch besprechen">
+						Preiskategorie lieber telefonisch besprechen
+					</option>
 				</select>
 			</div>
 			<div>
@@ -127,8 +131,8 @@ const priceCategories = [
 	<section class="mx-auto max-w-2xl px-4 pb-16 sm:px-6">
 		<h2 class="text-xl font-semibold text-slate-900">So finden Sie uns</h2>
 		<p class="mt-2 text-sm text-slate-600">
-			Fortunastrasse 2, CH-9437 Marbach · Besuch nach Vereinbarung – bitte
-			vorab kurz anrufen.
+			Fortunastrasse 2, CH-9437 Marbach. Bitte vereinbaren Sie einen Termin
+			für den Besuch unserer Ausstellung telefonisch mit uns.
 		</p>
 		<div class="mt-4 overflow-hidden rounded-lg border border-slate-200 shadow-sm">
 			<iframe
