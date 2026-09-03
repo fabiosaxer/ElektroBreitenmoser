@@ -1,0 +1,8 @@
+# Astro benennt jede Datei in diesem Ordner nach ihrem Inhalt (Hash im
+# Dateinamen, z.B. Layout.pC20WPNu.css). Ändert sich der Inhalt, ändert sich
+# auch der Dateiname - deshalb dürfen diese Dateien beliebig lange und
+# "unveränderlich" gecacht werden, ohne dass ein Deploy dadurch verzögert
+# sichtbar würde.
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>
