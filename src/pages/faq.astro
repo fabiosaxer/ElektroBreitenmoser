@@ -12,7 +12,11 @@ const faqs = [
 	},
 	{
 		q: 'Muss ich für einen Besuch im Showroom einen Termin vereinbaren?',
-		a: 'Ja, Besuche sind nach Vereinbarung möglich. Rufen Sie uns bitte vorab kurz an, damit wir uns Zeit für Ihre Beratung nehmen können.',
+		a: 'Ja, Besuche sind nach Vereinbarung möglich. Rufen Sie uns bitte vorab kurz an, damit wir uns Zeit für Ihre Beratung nehmen können. Sie haben ausserdem die Möglichkeit, kostenlose Beratungen in einem Zugorama in Anspruch zu nehmen. Vereinbaren Sie auch dort einen Termin und profitieren Sie von der Möglichkeit, das komplette V‑ZUG Sortiment anzuschauen.',
+		link: {
+			href: 'https://www.vzug.com/ch/de/find-us',
+			label: 'Zugorama Standorte',
+		},
 	},
 	{
 		q: 'Verkaufen Sie auch Ersatzteile?',
@@ -76,7 +80,20 @@ const faqJsonLd = {
 				faqs.map((f) => (
 					<div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
 						<dt class="text-lg font-semibold text-slate-900">{f.q}</dt>
-						<dd class="mt-2 text-slate-600">{f.a}</dd>
+						<dd class="mt-2 text-slate-600">
+							{f.a}
+							{f.link && (
+								<a
+									href={f.link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="mt-2 flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+								>
+									{f.link.label}
+									<span aria-hidden="true">→</span>
+								</a>
+							)}
+						</dd>
 					</div>
 				))
 			}
