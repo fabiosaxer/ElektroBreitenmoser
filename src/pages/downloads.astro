@@ -6,11 +6,13 @@ const downloads = [
 		title: 'Tipps für Ihren Geschirrspüler',
 		description: 'Für beste Reinigungs- und Trocknungsresultate – jeden Tag.',
 		href: '/downloads/tipps-geschirrspueler.pdf',
+		related: { href: '/geraete/geschirrspueler/', label: 'V‑ZUG Geschirrspüler ansehen' },
 	},
 	{
 		title: 'Pflegetipps für Ihre Waschmaschine',
 		description: 'Vermeiden von schlechten Gerüchen und Rückständen.',
 		href: '/downloads/pflegetipps-waschmaschine.pdf',
+		related: { href: '/geraete/waschmaschinen/', label: 'V‑ZUG Waschmaschinen ansehen' },
 	},
 ];
 ---
@@ -28,31 +30,40 @@ const downloads = [
 		<div class="mt-8 space-y-4">
 			{
 				downloads.map((d) => (
-					<a
-						href={d.href}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
-					>
-						<svg
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.75"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="h-8 w-8 flex-shrink-0 text-brand"
-							aria-hidden="true"
+					<div>
+						<a
+							href={d.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
 						>
-							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-							<path d="M14 2v6h6" />
-						</svg>
-						<span class="flex-1">
-							<span class="block text-base font-semibold text-slate-900">{d.title}</span>
-							<span class="mt-1 block text-sm text-slate-600">{d.description}</span>
-						</span>
-						<span class="flex-shrink-0 text-sm font-semibold text-brand">PDF ↓</span>
-					</a>
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.75"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="h-8 w-8 flex-shrink-0 text-brand"
+								aria-hidden="true"
+							>
+								<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+								<path d="M14 2v6h6" />
+							</svg>
+							<span class="flex-1">
+								<span class="block text-base font-semibold text-slate-900">{d.title}</span>
+								<span class="mt-1 block text-sm text-slate-600">{d.description}</span>
+							</span>
+							<span class="flex-shrink-0 text-sm font-semibold text-brand">PDF ↓</span>
+						</a>
+						{d.related && (
+							<p class="mt-2 pl-1 text-sm">
+								<a href={d.related.href} class="font-semibold text-brand hover:text-brand-dark">
+									{d.related.label} →
+								</a>
+							</p>
+						)}
+					</div>
 				))
 			}
 		</div>

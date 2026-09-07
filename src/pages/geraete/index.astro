@@ -5,6 +5,20 @@ import { rooms } from '../../data/appliances';
 
 const h2 =
 	'text-[24px] leading-[1.3] font-semibold text-slate-900 sm:text-[28px] md:text-[30px]';
+
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Start', item: new URL('/', Astro.site).toString() },
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Gerätekategorien',
+			item: new URL('/geraete/', Astro.site).toString(),
+		},
+	],
+};
 ---
 
 <Layout
@@ -12,6 +26,11 @@ const h2 =
 	description="Alle V‑ZUG Gerätekategorien im Überblick: Küche und Waschraum. Persönliche Beratung bei der Elektro Breitenmoser AG, Lieferung in die ganze Deutschschweiz."
 >
 	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+		<nav aria-label="Breadcrumb" class="mb-4 text-xs text-slate-500">
+			<a href="/" class="hover:text-brand">Start</a>
+			<span aria-hidden="true"> / </span>
+			<span class="text-slate-700">Gerätekategorien</span>
+		</nav>
 		<h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">Gerätekategorien</h1>
 		<p class="mt-3 max-w-2xl text-slate-600">
 			Von der Kücheninsel bis zum Waschraum – wählen Sie eine Kategorie für mehr Informationen
@@ -39,4 +58,6 @@ const h2 =
 			))
 		}
 	</section>
+	{/* set:html hier nur mit statischen, entwicklerkontrollierten Werten befüllen - kein Nutzer-/CMS-Input ohne Sanitizing */}
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
 </Layout>

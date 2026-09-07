@@ -25,6 +25,10 @@ const faqs = [
 	{
 		q: 'Welche Marke führen Sie?',
 		a: 'Wir sind Partner von V‑ZUG und bieten das gesamte V‑ZUG Sortiment für Küche und Waschraum an.',
+		link: {
+			href: '/geraete/',
+			label: 'Alle Gerätekategorien ansehen',
+		},
 	},
 	{
 		q: 'Warum kaufen Kunden bei einem regionalen KMU statt online oder im Grossverteiler?',
@@ -82,11 +86,20 @@ const faqJsonLd = {
 						<dt class="text-lg font-semibold text-slate-900">{f.q}</dt>
 						<dd class="mt-2 text-slate-600">
 							{f.a}
-							{f.link && (
+							{f.link && f.link.href.startsWith('http') && (
 								<a
 									href={f.link.href}
 									target="_blank"
 									rel="noopener noreferrer"
+									class="mt-2 flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+								>
+									{f.link.label}
+									<span aria-hidden="true">→</span>
+								</a>
+							)}
+							{f.link && !f.link.href.startsWith('http') && (
+								<a
+									href={f.link.href}
 									class="mt-2 flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
 								>
 									{f.link.label}

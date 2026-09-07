@@ -24,13 +24,25 @@ const fullTitle = `${title} · Elektro Breitenmoser AG`;
 
 const localBusinessJsonLd = {
 	'@context': 'https://schema.org',
-	'@type': 'LocalBusiness',
+	// ElectronicsStore ist der treffendste schema.org-Subtyp von LocalBusiness für
+	// ein Verkaufsgeschäft für Haushaltgeräte (kein eigener "ApplianceStore"-Typ
+	// vorhanden) - erbt alle LocalBusiness-Eigenschaften, kein Rich-Result-Verlust.
+	'@type': 'ElectronicsStore',
 	name: 'Elektro Breitenmoser AG',
-	image: new URL('/logo.png', Astro.site).toString(),
+	// Reales Standort-/Gebäudefoto statt Logo, wie von Google für LocalBusiness
+	// empfohlen (og-default.jpg basiert auf dem Hero-Gebäudefoto in Marbach).
+	image: [new URL('/og-default.jpg', Astro.site).toString()],
+	logo: new URL('/logo.png', Astro.site).toString(),
 	url: Astro.site?.toString(),
 	telephone: '+41717771276',
 	email: 'info@vzugshop.ch',
 	taxID: 'CHE-108.098.718',
+	// Gründungsjahr 1933, verifiziert über Zeitungsartikel zur Firmengeschichte
+	// (siehe docs/research.md), identisch zur Timeline auf /ueber-uns/.
+	foundingDate: '1933',
+	// Grobe Preiskategorie: V‑ZUG ist Premium-Segment, alle Produkte/Formular-
+	// Preiskategorien auf der Website liegen im oberen Preissegment.
+	priceRange: '$$$',
 	address: {
 		'@type': 'PostalAddress',
 		streetAddress: 'Fortunastrasse 2',
@@ -39,6 +51,14 @@ const localBusinessJsonLd = {
 		addressRegion: 'SG',
 		addressCountry: 'CH',
 	},
+	// Koordinaten für Fortunastrasse 2, 9437 Marbach, verifiziert per
+	// Geocoding (Gebäude-genauer Treffer, nicht nur Ortszentrum).
+	geo: {
+		'@type': 'GeoCoordinates',
+		latitude: 47.394351,
+		longitude: 9.573367,
+	},
+	hasMap: 'https://www.google.com/maps/search/?api=1&query=Fortunastrasse+2%2C+CH-9437+Marbach',
 	areaServed: {
 		'@type': 'Country',
 		name: 'Schweiz',
