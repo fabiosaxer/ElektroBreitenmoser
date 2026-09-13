@@ -14,14 +14,16 @@ export function getStaticPaths() {
 
 const { item, room } = Astro.props;
 
-// Kurzer Fachhändler-/Regionaltext je Raumbereich - deckt zusätzlich zu "Marbach"
-// und "Rheintal" auch die Nachbarregionen ab, aus denen laut Marktrecherche
-// ebenfalls Kundschaft kommt (St. Gallen, Appenzell), ohne Keyword-Stuffing.
+// Kurzer Fachhändler-/Regionaltext je Raumbereich - nennt zusätzlich zu "Marbach"
+// den Suchbegriff "Ostschweiz" als Oberbegriff (höheres Suchvolumen als die
+// einzelnen Teilregionen) und behält Rheintal/St. Gallen/Appenzellerland als
+// konkrete Teilregionen bei, aus denen laut Marktrecherche ebenfalls Kundschaft
+// kommt - ohne Keyword-Stuffing.
 const regionText: Record<string, string> = {
 	Küche:
-		'Ob Neubauküche, Renovation oder Ersatz eines einzelnen Geräts: Kundinnen und Kunden aus dem ganzen Rheintal, aus St. Gallen und dem Appenzellerland schätzen die persönliche Beratung direkt vor Ort in Marbach.',
+		'Ob Neubauküche, Renovation oder Ersatz eines einzelnen Geräts: Kundinnen und Kunden aus der ganzen Ostschweiz – vom Rheintal über St. Gallen bis ins Appenzellerland – schätzen die persönliche Beratung direkt vor Ort in Marbach.',
 	Waschraum:
-		'Ob für den neuen Waschraum, die Waschküche im Mehrfamilienhaus oder als Ersatz eines Einzelgeräts: Kundinnen und Kunden aus dem ganzen Rheintal, aus St. Gallen und dem Appenzellerland schätzen die persönliche Beratung direkt vor Ort in Marbach.',
+		'Ob für den neuen Waschraum, die Waschküche im Mehrfamilienhaus oder als Ersatz eines Einzelgeräts: Kundinnen und Kunden aus der ganzen Ostschweiz – vom Rheintal über St. Gallen bis ins Appenzellerland – schätzen die persönliche Beratung direkt vor Ort in Marbach.',
 };
 
 // Handverlesene, thematisch sinnvolle Querverlinkung statt automatischer

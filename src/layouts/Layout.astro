@@ -13,7 +13,7 @@ interface Props {
 
 const {
 	title,
-	description = 'Elektro Breitenmoser AG – Ihr V‑ZUG Fachhändler und Servicepartner in Marbach. Lieferung in die ganze Deutschschweiz.',
+	description = 'Elektro Breitenmoser AG – Ihr V‑ZUG Fachhändler und Servicepartner in Marbach, Ostschweiz. Lieferung in die ganze Deutschschweiz.',
 	noindex = false,
 	ogImage = '/og-default.jpg',
 } = Astro.props;
@@ -59,10 +59,21 @@ const localBusinessJsonLd = {
 		longitude: 9.573367,
 	},
 	hasMap: 'https://www.google.com/maps/search/?api=1&query=Fortunastrasse+2%2C+CH-9437+Marbach',
-	areaServed: {
-		'@type': 'Country',
-		name: 'Schweiz',
-	},
+	// Länderweite Angabe deckt die reale Lieferung in die ganze Deutschschweiz ab;
+	// die vier Ostschweizer Kantone werden zusätzlich als eigene State-Einträge
+	// genannt, weil das Kerneinzugsgebiet (Rheintal, St. Gallen, Appenzellerland,
+	// Thurgau) dort liegt - keine Erweiterung des Liefergebiets, nur präzisere
+	// regionale Zuordnung für Suchmaschinen.
+	areaServed: [
+		{
+			'@type': 'Country',
+			name: 'Schweiz',
+		},
+		{ '@type': 'State', name: 'Kanton St. Gallen' },
+		{ '@type': 'State', name: 'Kanton Thurgau' },
+		{ '@type': 'State', name: 'Kanton Appenzell Ausserrhoden' },
+		{ '@type': 'State', name: 'Kanton Appenzell Innerrhoden' },
+	],
 	// Kein openingHoursSpecification: Besuche sind nur nach Vereinbarung möglich,
 	// es gibt keine festen Öffnungstage/-zeiten zu deklarieren (siehe docs/research.md).
 	sameAs: ['https://www.instagram.com/breitenmoserag_vzug/'],
