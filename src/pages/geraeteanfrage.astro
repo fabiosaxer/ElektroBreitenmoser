@@ -5,11 +5,11 @@ import { rooms } from '../data/appliances';
 const web3formsAccessKey = 'b82697eb-f0f3-4c3f-b9f1-9073e53d8d7a';
 
 const priceCategories = [
-	'Auslaufmodelle, Importware, Schnäppchenecke (bis CHF 1’500)',
-	'Swiss Made Basic (bis CHF 2’500)',
-	'Swiss Made Classic (bis CHF 3’000)',
-	'Swiss Made Premium (bis CHF 4’000)',
-	'Swiss Made Premium De Luxe (ab CHF 4’000)',
+	'Auslaufmodelle, Importware, Schnäppchenecke',
+	'Swiss Made Basic',
+	'Swiss Made Classic',
+	'Swiss Made Premium',
+	'Swiss Made Premium De Luxe',
 ];
 ---
 
@@ -36,15 +36,29 @@ const priceCategories = [
 			/>
 
 			<p class="text-xs text-slate-500">Mit * markierte Felder sind Pflichtfelder.</p>
-			<div>
-				<label for="name" class="block text-sm font-medium text-slate-700">Name *</label>
-				<input
-					type="text"
-					name="name"
-					id="name"
-					required
-					class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
-				/>
+			<div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+				<div>
+					<label for="firstname" class="block text-sm font-medium text-slate-700"
+						>Vorname *</label
+					>
+					<input
+						type="text"
+						name="firstname"
+						id="firstname"
+						required
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
+				<div>
+					<label for="name" class="block text-sm font-medium text-slate-700">Nachname *</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						required
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
 			</div>
 			<div>
 				<label for="email" class="block text-sm font-medium text-slate-700">E-Mail *</label>
@@ -66,6 +80,49 @@ const priceCategories = [
 					class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
 				/>
 			</div>
+			<div class="grid grid-cols-1 gap-5 sm:grid-cols-[2fr_1fr]">
+				<div>
+					<label for="strasse" class="block text-sm font-medium text-slate-700">Strasse</label>
+					<input
+						type="text"
+						name="strasse"
+						id="strasse"
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
+				<div>
+					<label for="hausnummer" class="block text-sm font-medium text-slate-700"
+						>Hausnummer</label
+					>
+					<input
+						type="text"
+						name="hausnummer"
+						id="hausnummer"
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
+			</div>
+			<div class="grid grid-cols-1 gap-5 sm:grid-cols-[1fr_2fr]">
+				<div>
+					<label for="plz" class="block text-sm font-medium text-slate-700">PLZ</label>
+					<input
+						type="text"
+						name="plz"
+						id="plz"
+						inputmode="numeric"
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
+				<div>
+					<label for="ort" class="block text-sm font-medium text-slate-700">Ort</label>
+					<input
+						type="text"
+						name="ort"
+						id="ort"
+						class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+					/>
+				</div>
+			</div>
 			<div>
 				<label for="device" class="block text-sm font-medium text-slate-700"
 					>Gewünschter Gerätebereich *</label
@@ -77,6 +134,9 @@ const priceCategories = [
 					class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
 				>
 					<option value="">Bitte wählen …</option>
+					<option value="Mehrere Artikel (2–10 verschiedene)" data-slug="mehrere-artikel">
+						Mehrere Artikel (2–10 verschiedene)
+					</option>
 					{
 						rooms.map((r) => (
 							<optgroup label={r.room}>
@@ -91,7 +151,7 @@ const priceCategories = [
 				</select>
 			</div>
 			<div>
-				<label for="budget" class="block text-sm font-medium text-slate-700"
+				<label for="budget" id="budget-label" class="block text-sm font-medium text-slate-700"
 					>Preiskategorie *</label
 				>
 				<select
@@ -106,10 +166,14 @@ const priceCategories = [
 						Preiskategorie lieber telefonisch besprechen
 					</option>
 				</select>
+				<p id="budget-hint" class="mt-1.5 hidden text-xs text-slate-500">
+					Mehrfachauswahl möglich: Strg (Windows) bzw. Cmd (Mac) gedrückt halten, um
+					mehrere Preiskategorien auszuwählen.
+				</p>
 			</div>
 			<div>
 				<label for="message" class="block text-sm font-medium text-slate-700"
-					>Nachricht *</label
+					>Nachricht / Wünsche / Budget / etc. *</label
 				>
 				<textarea
 					name="message"
@@ -158,15 +222,33 @@ const priceCategories = [
 </Layout>
 
 <script>
+	const deviceSelect = document.getElementById('device');
+	const budgetSelect = document.getElementById('budget');
+	const budgetLabel = document.getElementById('budget-label');
+	const budgetHint = document.getElementById('budget-hint');
+
+	function updateBudgetMode() {
+		if (!(deviceSelect instanceof HTMLSelectElement) || !(budgetSelect instanceof HTMLSelectElement)) {
+			return;
+		}
+		const isMulti = deviceSelect.selectedOptions[0]?.dataset.slug === 'mehrere-artikel';
+		budgetSelect.multiple = isMulti;
+		budgetSelect.size = isMulti ? Math.min(budgetSelect.options.length, 6) : 1;
+		if (budgetLabel) {
+			budgetLabel.textContent = isMulti ? 'Preiskategorien *' : 'Preiskategorie *';
+		}
+		budgetHint?.classList.toggle('hidden', !isMulti);
+	}
+
+	deviceSelect?.addEventListener('change', updateBudgetMode);
+
 	const params = new URLSearchParams(window.location.search);
 	const slug = params.get('geraet');
-	if (slug) {
-		const select = document.getElementById('device');
-		if (select instanceof HTMLSelectElement) {
-			const option = Array.from(select.options).find((o) => o.dataset.slug === slug);
-			if (option) {
-				select.value = option.value;
-			}
+	if (slug && deviceSelect instanceof HTMLSelectElement) {
+		const option = Array.from(deviceSelect.options).find((o) => o.dataset.slug === slug);
+		if (option) {
+			deviceSelect.value = option.value;
 		}
 	}
+	updateBudgetMode();
 </script>
