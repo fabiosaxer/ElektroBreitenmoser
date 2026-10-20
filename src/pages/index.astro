@@ -197,7 +197,7 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 						))}
 						{r.room === 'Küche' && (
 							<a
-								href="/geraeteanfrage/?geraet=mehrere-artikel"
+								href="/geraeteanfrage/#device-group"
 								class="group flex flex-col items-center gap-3 rounded-xl border border-brand-100 bg-white p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand-50 hover:shadow-md"
 							>
 								<svg
@@ -210,10 +210,11 @@ const kickerBrand = 'text-[13px] font-semibold uppercase tracking-[0.08em] text-
 									class="h-10 w-10 text-brand transition group-hover:text-brand-dark"
 									aria-hidden="true"
 								>
-									<rect x="6" y="6" width="14" height="14" rx="2" />
-									<rect x="28" y="6" width="14" height="14" rx="2" />
-									<rect x="6" y="28" width="14" height="14" rx="2" />
-									<rect x="28" y="28" width="14" height="14" rx="2" />
+									<rect x="8" y="5" width="32" height="38" rx="2" />
+									<path d="M15 16l3 3 6-6" />
+									<line x1="28" y1="16" x2="33" y2="16" />
+									<path d="M15 28l3 3 6-6" />
+									<line x1="28" y1="28" x2="33" y2="28" />
 								</svg>
 								<span class="text-sm font-medium text-slate-700">
 									Anfrage für 2–10 verschiedene Artikel

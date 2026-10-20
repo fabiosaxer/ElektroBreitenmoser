@@ -123,35 +123,43 @@ const priceCategories = [
 					/>
 				</div>
 			</div>
-			<div>
-				<label for="device" class="block text-sm font-medium text-slate-700"
-					>Gewünschter Gerätebereich *</label
+			<div id="device-group">
+				<span class="block text-sm font-medium text-slate-700"
+					>Gewünschter Gerätebereich * <span class="font-normal text-slate-500"
+						>(Mehrfachauswahl möglich)</span
+					></span
 				>
-				<select
-					name="device"
-					id="device"
-					required
-					class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
-				>
-					<option value="">Bitte wählen …</option>
-					<option value="Mehrere Artikel (2–10 verschiedene)" data-slug="mehrere-artikel">
-						Mehrere Artikel (2–10 verschiedene)
-					</option>
+				<div class="mt-2 space-y-4">
 					{
 						rooms.map((r) => (
-							<optgroup label={r.room}>
-								{r.items.map((item) => (
-									<option value={item.label} data-slug={item.slug}>
-										{item.label}
-									</option>
-								))}
-							</optgroup>
+							<div>
+								<p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
+									{r.room}
+								</p>
+								<div class="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+									{r.items.map((item) => (
+										<label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:border-brand">
+											<input
+												type="checkbox"
+												name="device"
+												value={item.label}
+												data-slug={item.slug}
+												class="h-4 w-4 rounded border-slate-300 text-brand focus:ring-brand"
+											/>
+											{item.label}
+										</label>
+									))}
+								</div>
+							</div>
 						))
 					}
-				</select>
+				</div>
+				<p id="device-error" class="mt-2 hidden text-xs text-red-600">
+					Bitte wählen Sie mindestens eine Gerätekategorie aus.
+				</p>
 			</div>
 			<div>
-				<label for="budget" id="budget-label" class="block text-sm font-medium text-slate-700"
+				<label for="budget" class="block text-sm font-medium text-slate-700"
 					>Preiskategorie *</label
 				>
 				<select
@@ -166,10 +174,6 @@ const priceCategories = [
 						Preiskategorie lieber telefonisch besprechen
 					</option>
 				</select>
-				<p id="budget-hint" class="mt-1.5 hidden text-xs text-slate-500">
-					Mehrfachauswahl möglich: Strg (Windows) bzw. Cmd (Mac) gedrückt halten, um
-					mehrere Preiskategorien auszuwählen.
-				</p>
 			</div>
 			<div>
 				<label for="message" class="block text-sm font-medium text-slate-700"
@@ -222,33 +226,30 @@ const priceCategories = [
 </Layout>
 
 <script>
-	const deviceSelect = document.getElementById('device');
-	const budgetSelect = document.getElementById('budget');
-	const budgetLabel = document.getElementById('budget-label');
-	const budgetHint = document.getElementById('budget-hint');
-
-	function updateBudgetMode() {
-		if (!(deviceSelect instanceof HTMLSelectElement) || !(budgetSelect instanceof HTMLSelectElement)) {
-			return;
-		}
-		const isMulti = deviceSelect.selectedOptions[0]?.dataset.slug === 'mehrere-artikel';
-		budgetSelect.multiple = isMulti;
-		budgetSelect.size = isMulti ? Math.min(budgetSelect.options.length, 6) : 1;
-		if (budgetLabel) {
-			budgetLabel.textContent = isMulti ? 'Preiskategorien *' : 'Preiskategorie *';
-		}
-		budgetHint?.classList.toggle('hidden', !isMulti);
-	}
-
-	deviceSelect?.addEventListener('change', updateBudgetMode);
+	const deviceCheckboxes = document.querySelectorAll('input[name="device"]');
+	const deviceError = document.getElementById('device-error');
+	const form = document.querySelector('form');
 
 	const params = new URLSearchParams(window.location.search);
 	const slug = params.get('geraet');
-	if (slug && deviceSelect instanceof HTMLSelectElement) {
-		const option = Array.from(deviceSelect.options).find((o) => o.dataset.slug === slug);
-		if (option) {
-			deviceSelect.value = option.value;
-		}
+	if (slug) {
+		deviceCheckboxes.forEach((cb) => {
+			if (cb instanceof HTMLInputElement && cb.dataset.slug === slug) {
+				cb.checked = true;
+			}
+		});
 	}
-	updateBudgetMode();
+
+	form?.addEventListener('submit', (event) => {
+		const anyChecked = Array.from(deviceCheckboxes).some(
+			(cb) => cb instanceof HTMLInputElement && cb.checked
+		);
+		if (!anyChecked) {
+			event.preventDefault();
+			deviceError?.classList.remove('hidden');
+			document.getElementById('device-group')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		} else {
+			deviceError?.classList.add('hidden');
+		}
+	});
 </script>
